@@ -1,0 +1,19 @@
+#first.paragraph {
+  color: aqua;
+}
+
+#first {
+  color: blueviolet;
+}
+
+p.paragraph {
+  color: green;
+}
+
+.paragraph {
+  color: red;
+}
+
+p {
+  color: blue;
+}
