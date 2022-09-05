@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://kit.fontawesome.com/a6bc574287.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>모두의 HTML/CSS</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <h1 class="header-title">
+          모두의
+          <div class="rectangle-bar"></div>
+          <br />HTML/CSS
+        </h1>
+        <ul>
+          <li class="nav-list"><button>HOME</button></li>
+          <li class="nav-list"><button>HTML</button></li>
+          <li class="nav-list"><button>CSS</button></li>
+          <li class="nav-list"><button>JavaScript</button></li>
+        </ul>
+        <button class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </nav>
+      <section class="hello">
+        <img
+          class="hello-img"
+          src="./img/메인사자.PNG"
+          alt="사자탈을 쓴 사람 모형이 웃는 얼굴로 인사하고 있다."
+        />
+        <div class="hello-text-container">
+          <h2 class="hello-title">모두의 HTML/CSS</h2>
+          <p class="hello-desc-big">HELLO<br />WORLD! :)</p>
+          <p class="hello-desc-small">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+            aliquam ratione, a eos perspiciatis temporibus
+          </p>
+          <button class="hello-btn">
+            <a class="hello-register-link" href="">회원가입</a>
+          </button>
+          <button class="hello-btn">
+            <a class="hello-empty-link" href="">BUTTON</a>
+          </button>
+        </div>
+        <article class="hello-links">
+          <figure>
+            <a href="">
+              <img src="./img/mbit강의.png" alt="M.B.I.T 강의 보러가기" />
+              <figcaption>
+                <p>M.B.I.T 강의 보러가기</p>
+              </figcaption>
+            </a>
+          </figure>
+          <figure>
+            <a href="">
+              <img src="./img/30min.png" alt="30분 요약강좌 보러가기" />
+              <figcaption>
+                <p>30분 요약강좌 보러가기</p>
+              </figcaption>
+            </a>
+          </figure>
+        </article>
+      </section>
+    </header>
+
+    <main class="main">
+      <section class="subject">
+        <ul class="subject-list">
+          <li class="html">
+            <h3 class="html-title">HTML</h3>
+            <p class="html-desc">
+              Hypertext Markup Language 하이퍼텍스트 마크업 언어
+            </p>
+            <p class="html-desc">
+              웹을 이루는 가장 기초적인 구성 요소로, 웹 콘텐츠의 의미와 구조를
+              정의할 때 사용
+            </p>
+          </li>
+          <li class="css">
+            <h3 class="css-title">CSS</h3>
+            <p class="css-desc">Cascading Style Sheets</p>
+            <p class="css-desc">
+              HTML이나 XML(XML의 방언인 SVG, XHTML 포함)로 작성된 문서의 표시
+              방법을 기술하기 위한 스타일 시트 언어
+            </p>
+          </li>
+          <li class="javascript">
+            <h3 class="javascript-title">JavaScript</h3>
+            <p class="javascript-desc">
+              일급 함수를 사용하는 가벼운 객체 지향 인터프리터 언어
+            </p>
+            <p class="javascript-desc">
+              웹페이지의 스크립트 언어로 잘 알려져 있지만, 브라우저가 아닌
+              환경에서도 많이 사용됨
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="event-container">
+        <figure class="exercise">
+          <a class="exercise-link" href="">
+            <img class="exercise-img" src="" alt="" />
+            <figcaption class="exercise-desc">
+              <p class="event-time">오전 5:00</p>
+              <h2 class="event-title">헛둘셋넷<br />열심히 운동하기</h2>
+              <p class="event-desc">amet consectetur adipisicing elit.</p>
+            </figcaption>
+          </a>
+        </figure>
+        <figure class="goToWork">
+          <a class="goToWork-link" href="">
+            <img class="goToWork-img" src="" alt="" />
+            <figcaption class="goToWork-desc">
+              <p class="event-time">오전 9:00</p>
+              <h2 class="event-title">지친몸 이끌고<br />출근하기</h2>
+              <p class="event-desc">amet consectetur adipisicing elit.</p>
+            </figcaption>
+          </a>
+        </figure>
+        <figure class="leaveWork">
+          <a class="leaveWork-link" href="">
+            <img class="leaveWork-img" src="" alt="" />
+            <figcaption class="leaveWork-desc">
+              <p class="event-time">오후 06:00</p>
+              <h2 class="event-title">치킨과 함께하는<br />씐나는 퇴근</h2>
+              <p class="event-desc">amet consectetur adipisicing elit.</p>
+            </figcaption>
+          </a>
+        </figure>
+      </section>
+
+      <section class="notice">
+        <h2 class="notice-title">Lorem ipsum dolor sit.</h2>
+        <ul class="notice-list">
+          <li class="tabOne"><button>Tab1</button></li>
+          <li class="tabTwo"><button>Tab2</button></li>
+          <li class="tabThree"><button>Tab3</button></li>
+        </ul>
+        <button class="notice-moreBtn">more +</button>
+        <ol>
+          <li class="notice-item">
+            <span class="notice-order">10</span>
+            <p class="notice-desc">
+              <a class="notice-detail-link" href=""
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+                reiciendis ab non possimus tenetur placeat, tempora</a
+              >
+            </p>
+            <p class="notice-date">2022.01.01</p>
+            <span class="notice-new">N</span>
+          </li>
+          <li class="notice-item">
+            <span class="notice-order">9</span>
+            <p class="notice-desc">
+              <a class="notice-detail-link" href=""
+                >eaque explicabo libero necessitatibus sit illo quos, nihil,
+                labore optio. Officiis unde exercitationem quasi!</a
+              >
+            </p>
+            <p class="notice-date">2022.01.01</p>
+          </li>
+          <li class="notice-item">
+            <span class="notice-order">8</span>
+            <p class="notice-desc">
+              <a class="notice-detail-link" href=""
+                >sit amet, consectetur adipisicing elit. Exercitationem,
+                voluptas?</a
+              >
+            </p>
+            <p class="notice-date">2022.01.01</p>
+          </li>
+          <li class="notice-item">
+            <span class="notice-order">7</span>
+            <p>
+              <a class="notice-detail-link" href=""
+                >aliquam ullam distinctio illum, architecto qui, tenetur harum
+                dolores id ex iste saepe.</a
+              >
+            </p>
+            <p class="notice-date">2022.01.01</p>
+          </li>
+          <li class="notice-item">
+            <span class="notice-order">6</span>
+            <p>
+              <a class="notice-detail-link" href=""
+                >Nemo ratione tempora aliquid magni!</a
+              >
+            </p>
+            <p class="notice-date">2022.01.01</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="items">
+        <h2 class="items-title">Amet consectetur<br />adipisicing.</h2>
+        <button class="prev-item">&#60;</button>
+        <button class="next-item">&#62;</button>
+        <div class="item-list">
+          <figure class="item">
+            <img class="item-img" src="" alt="" />
+            <figcaption>
+              <h3 class="item-title">Ullam aliquam ratione, a eos</h3>
+              <p class="item-desc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat, vero.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="item">
+            <img class="icon-img" src="" alt="" />
+            <figcaption>
+              <h3 class="icon-title">Ullam aliquam ratione, a eos</h3>
+              <p class="item-desc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat, vero.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="item">
+            <img class="icon-img" src="" alt="" />
+            <figcaption>
+              <h3 class="icon-title">Ullam aliquam ratione, a eos</h3>
+              <p class="item-desc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat, vero.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <ul>
+          <li><button class="item-list-btn default"></button></li>
+          <li><button class="item-list-btn"></button></li>
+          <li><button class="item-list-btn"></button></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <h2><span class="footer-title">모두의</span><br />HTML/CSS</h2>
+      <address>
+        <dl>
+          <dt class="address hidden">주소</dt>
+          <dd class="address-content">
+            서울특별시 사랑시 고백구 행복동 123-45 1층
+          </dd>
+          <dt class="call-email hidden">연락처/이메일</dt>
+          <dd class="call-email-content">02-987-6543 / abc@gmail.com</dd>
+        </dl>
+      </address>
+      <small>&copy; Weniv all rights reserved</small>
+    </footer>
+  </body>
+</html>

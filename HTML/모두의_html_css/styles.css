@@ -1,0 +1,145 @@
+/* global */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset */
+h1,
+h2,
+h3 {
+  margin: initial;
+}
+
+li {
+  list-style: none;
+}
+
+/* header */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffcf5c;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.header-title {
+  position: relative;
+  vertical-align: middle;
+  font-family: 'Jalnan OTF', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.rectangle-bar {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+  width: 56px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #ffcf5c;
+}
+
+.nav > ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-list > button {
+  background: none;
+  border: none;
+}
+
+.search {
+  background: none;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+}
+
+/* main */
+
+/* hello */
+.hello {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.hello-img {
+  width: 711px;
+  height: 717px;
+  margin: 0 100px 0 0;
+}
+
+.hello-text-container {
+  text-align: start;
+  z-index: 999;
+  width: 501px;
+  top: 265px;
+  left: 905px;
+  margin: 198px 0;
+}
+
+.hello-title,
+.hello-desc-big,
+.hello-desc-small {
+  margin-bottom: 18px;
+  font-family: 'Pretendard';
+  font-style: normal;
+}
+
+.hello-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.hello-desc-big {
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 100px;
+}
+
+.hello-desc-small {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  opacity: 0.8;
+}
+
+.hello-btn {
+  width: 180px;
+  height: 64px;
+  background-color: #3a2a21;
+  border-radius: 10px;
+}
+
+.hello-btn a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.hello-links {
+  position: ;
+}
+
+/* subject */
+
+/* event-container */
+
+/* notice */
+
+/* items */
