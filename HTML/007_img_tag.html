@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <!-- 스크린 리더가 읽지 않습니다. -->
+    <img src="jeju.jpg" alt="" />
+    <!-- 스크린 리더가 'a'를 읽습니다. -->
+    <img src="jeju.jpg" />
+    <!-- 스크린 리더가 '이미지'를 읽습니다. -->
+    <img src="jeju.jpg" alt="이미지" />
+    <!-- 상대경로 : 현재 폴더에 jeju.jpg -->
+    <img src="./img/jeju.jpg" alt="이미지" />
+    <!-- 상대경로 : 상위 폴더 > img폴더 > jeju.jpg -->
+    <img src="../HTML/img/jeju.jpg" alt="이미지" />
+    <!-- 절대경로 -->
+    <img src="http://www.paullab.co.kr/images/ceo.png" alt="이미지" />
+    <img
+      src="C:\Users\JihyeongLee\Desktop\Projects\likelion_fe_school_3\HTML\img\jeju.jpg"
+      alt="이미지"
+    />
+    <img
+      width="200px"
+      srcset="img/logo_1.png 2x, img/logo_2.png 3x"
+      src="./img/jeju.jpg"
+      alt="test"
+    />
+  </body>
+</html>
