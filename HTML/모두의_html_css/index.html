@@ -13,12 +13,12 @@
   </head>
   <body>
     <header class="header">
+      <h1 class="header-title">
+        모두의
+        <div class="rectangle-bar"></div>
+        <br />HTML/CSS
+      </h1>
       <nav class="nav">
-        <h1 class="header-title">
-          모두의
-          <div class="rectangle-bar"></div>
-          <br />HTML/CSS
-        </h1>
         <ul>
           <li class="nav-list"><button>HOME</button></li>
           <li class="nav-list"><button>HTML</button></li>
@@ -33,7 +33,7 @@
         <img
           class="hello-img"
           src="./img/메인사자.PNG"
-          alt="사자탈을 쓴 사람 모형이 웃는 얼굴로 인사하고 있다."
+          alt="사자탈을 쓴 사람 모형이 웃는 얼굴로 반갑게 인사하고 있다."
         />
         <div class="hello-text-container">
           <h2 class="hello-title">모두의 HTML/CSS</h2>
@@ -42,11 +42,9 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
             aliquam ratione, a eos perspiciatis temporibus
           </p>
+          <a class="hello-register-link" href="">회원가입</a>
           <button class="hello-btn">
-            <a class="hello-register-link" href="">회원가입</a>
-          </button>
-          <button class="hello-btn">
-            <a class="hello-empty-link" href="">BUTTON</a>
+            BUTTON
           </button>
         </div>
         <article class="hello-links">
@@ -54,7 +52,6 @@
             <a href="">
               <img src="./img/mbit강의.png" alt="M.B.I.T 강의 보러가기" />
               <figcaption>
-                <p>M.B.I.T 강의 보러가기</p>
               </figcaption>
             </a>
           </figure>
@@ -62,7 +59,6 @@
             <a href="">
               <img src="./img/30min.png" alt="30분 요약강좌 보러가기" />
               <figcaption>
-                <p>30분 요약강좌 보러가기</p>
               </figcaption>
             </a>
           </figure>
@@ -72,6 +68,7 @@
 
     <main class="main">
       <section class="subject">
+        <h2>강의 과목 소개</h2>
         <ul class="subject-list">
           <li class="html">
             <h3 class="html-title">HTML</h3>
@@ -105,36 +102,45 @@
       </section>
 
       <section class="event-container">
-        <figure class="exercise">
-          <a class="exercise-link" href="">
-            <img class="exercise-img" src="" alt="" />
-            <figcaption class="exercise-desc">
-              <p class="event-time">오전 5:00</p>
-              <h2 class="event-title">헛둘셋넷<br />열심히 운동하기</h2>
-              <p class="event-desc">amet consectetur adipisicing elit.</p>
-            </figcaption>
-          </a>
-        </figure>
-        <figure class="goToWork">
-          <a class="goToWork-link" href="">
-            <img class="goToWork-img" src="" alt="" />
-            <figcaption class="goToWork-desc">
-              <p class="event-time">오전 9:00</p>
-              <h2 class="event-title">지친몸 이끌고<br />출근하기</h2>
-              <p class="event-desc">amet consectetur adipisicing elit.</p>
-            </figcaption>
-          </a>
-        </figure>
-        <figure class="leaveWork">
-          <a class="leaveWork-link" href="">
-            <img class="leaveWork-img" src="" alt="" />
-            <figcaption class="leaveWork-desc">
-              <p class="event-time">오후 06:00</p>
-              <h2 class="event-title">치킨과 함께하는<br />씐나는 퇴근</h2>
-              <p class="event-desc">amet consectetur adipisicing elit.</p>
-            </figcaption>
-          </a>
-        </figure>
+        <h2>이벤트</h2>
+        <ol>
+          <li>
+            <figure class="exercise">
+              <a class="exercise-link" href="">
+                <img class="exercise-img" src="" alt="" />
+                <figcaption class="exercise-desc">
+                  <time class="event-time">오전 5:00</time>
+                  <h3 class="event-title">헛둘셋넷<br />열심히 운동하기</h3>
+                  <p class="event-desc">amet consectetur adipisicing elit.</p>
+                </figcaption>
+              </a>
+            </figure>
+          </li>
+          <li>
+            <figure class="goToWork">
+              <a class="goToWork-link" href="">
+                <img class="goToWork-img" src="" alt="" />
+                <figcaption class="goToWork-desc">
+                  <time class="event-time">오전 9:00</time>
+                  <h3 class="event-title">지친몸 이끌고<br />출근하기</h3>
+                  <p class="event-desc">amet consectetur adipisicing elit.</p>
+                </figcaption>
+              </a>
+            </figure>
+          </li>
+          <li>
+            <figure class="leaveWork">
+              <a class="leaveWork-link" href="">
+                <img class="leaveWork-img" src="" alt="" />
+                <figcaption class="leaveWork-desc">
+                  <time class="event-time">오후 06:00</time>
+                  <h3 class="event-title">치킨과 함께하는<br />씐나는 퇴근</h3>
+                  <p class="event-desc">amet consectetur adipisicing elit.</p>
+                </figcaption>
+              </a>
+            </figure>
+          </li>
+        </ol>
       </section>
 
       <section class="notice">
@@ -145,7 +151,7 @@
           <li class="tabThree"><button>Tab3</button></li>
         </ul>
         <button class="notice-moreBtn">more +</button>
-        <ol>
+        <ol start="10" reversed>
           <li class="notice-item">
             <span class="notice-order">10</span>
             <p class="notice-desc">
@@ -154,7 +160,7 @@
                 reiciendis ab non possimus tenetur placeat, tempora</a
               >
             </p>
-            <p class="notice-date">2022.01.01</p>
+            <time class="notice-date">2022.01.01</time>
             <span class="notice-new">N</span>
           </li>
           <li class="notice-item">
@@ -165,7 +171,7 @@
                 labore optio. Officiis unde exercitationem quasi!</a
               >
             </p>
-            <p class="notice-date">2022.01.01</p>
+            <time class="notice-date">2022.01.01</time>
           </li>
           <li class="notice-item">
             <span class="notice-order">8</span>
@@ -175,7 +181,7 @@
                 voluptas?</a
               >
             </p>
-            <p class="notice-date">2022.01.01</p>
+            <time class="notice-date">2022.01.01</ti>
           </li>
           <li class="notice-item">
             <span class="notice-order">7</span>
@@ -185,7 +191,7 @@
                 dolores id ex iste saepe.</a
               >
             </p>
-            <p class="notice-date">2022.01.01</p>
+            <time class="notice-date">2022.01.01</ti>
           </li>
           <li class="notice-item">
             <span class="notice-order">6</span>
@@ -194,7 +200,7 @@
                 >Nemo ratione tempora aliquid magni!</a
               >
             </p>
-            <p class="notice-date">2022.01.01</p>
+            <time class="notice-date">2022.01.01</time>
           </li>
         </ol>
       </section>
@@ -204,36 +210,44 @@
         <button class="prev-item">&#60;</button>
         <button class="next-item">&#62;</button>
         <div class="item-list">
-          <figure class="item">
-            <img class="item-img" src="" alt="" />
-            <figcaption>
-              <h3 class="item-title">Ullam aliquam ratione, a eos</h3>
-              <p class="item-desc">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat, vero.
-              </p>
-            </figcaption>
-          </figure>
-          <figure class="item">
-            <img class="icon-img" src="" alt="" />
-            <figcaption>
-              <h3 class="icon-title">Ullam aliquam ratione, a eos</h3>
-              <p class="item-desc">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat, vero.
-              </p>
-            </figcaption>
-          </figure>
-          <figure class="item">
-            <img class="icon-img" src="" alt="" />
-            <figcaption>
-              <h3 class="icon-title">Ullam aliquam ratione, a eos</h3>
-              <p class="item-desc">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat, vero.
-              </p>
-            </figcaption>
-          </figure>
+          <ul>
+            <li>
+              <figure class="item">
+                <img class="item-img" src="" alt="" />
+                <figcaption>
+                  <h3 class="item-title">Ullam aliquam ratione, a eos</h3>
+                  <p class="item-desc">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellat, vero.
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="item">
+                <img class="icon-img" src="" alt="" />
+                <figcaption>
+                  <h3 class="icon-title">Ullam aliquam ratione, a eos</h3>
+                  <p class="item-desc">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellat, vero.
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="item">
+                <img class="icon-img" src="" alt="" />
+                <figcaption>
+                  <h3 class="icon-title">Ullam aliquam ratione, a eos</h3>
+                  <p class="item-desc">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellat, vero.
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
         </div>
         <ul>
           <li><button class="item-list-btn default"></button></li>
@@ -244,7 +258,11 @@
     </main>
 
     <footer class="footer">
-      <h2><span class="footer-title">모두의</span><br />HTML/CSS</h2>
+      <h2 class="header-title">
+        모두의
+        <div class="rectangle-bar"></div>
+        <br />HTML/CSS
+      </h2>
       <address>
         <dl>
           <dt class="address hidden">주소</dt>
