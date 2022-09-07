@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- label 없이는 잘 사용하지 않음 -->
+    이름 :
+    <input type="text" name="name" />
+    <hr />
+    <!-- label로 input을 감싸는 방식은 출력 결과는 같지만 비추... -->
+    <label>
+      이름 :
+      <input type="text" name="name" />
+    </label>
+    <hr />
+    <!-- 권고 방식 -->
+    <label for="fullname">이름 :</label>
+    <input type="text" name="name" id="fullname" />
+
+    <!-- 개행 확인하는 방법: window.document.body.childNodes -> css로 개행 공백 삭제 가능 -->
+    <!-- 영상 배속 수정하는 방법: document.getElementsByTagName("video")[0].playbackRate = 2.5; -->
+  </body>
+</html>

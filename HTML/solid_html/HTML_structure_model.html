@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        text-align: center;
+      }
+      /* font-color */
+      h1 {
+        font-size: 24px;
+        font-weight: normal;
+        color: #7099b4;
+      }
+      h2,
+      p {
+        font-size: 24px;
+        font-weight: normal;
+        color: white;
+      }
+      .paragraph {
+        color: black;
+      }
+      .section,
+      .headings {
+        color: #7099b4;
+      }
+      /* background-color */
+      body {
+        background-color: #eeeeee;
+        margin: 50px 100px 100px;
+      }
+      .body {
+        background-color: #466fa6;
+        padding: 20px;
+      }
+      .header {
+        background-color: #96c9f2;
+        padding: 20px;
+      }
+      .headingOne {
+        background-color: #d8ff96;
+        padding: 20px;
+      }
+      .nav {
+        background-color: #6162b0;
+        padding: 10px;
+      }
+      .secLeft.nav {
+        background-color: #6162b0;
+        padding: 10px;
+        height: 770px;
+      }
+      .ul {
+        background-color: #9588f2;
+        padding: 10px;
+      }
+      .secLeft.ul {
+        background-color: #9588f2;
+        padding: 20px;
+        height: 600px;
+      }
+      main {
+        background-color: #1c2f40;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .secLeft {
+        background-color: #c9f0d1;
+        margin: 10px 20px;
+      }
+      .secRight {
+        background-color: #c9f0d1;
+        margin: 10px 20px;
+      }
+      .secLeft.header,
+      .secRight.header {
+        background-color: #96c9f2;
+      }
+      .headings {
+        background-color: #f2eeb6;
+        padding: 20px;
+      }
+      .secLeft.nav,
+      .secRight.nav {
+        background-color: #6162b0;
+      }
+      .secLeft.ul,
+      .secRight.ul {
+        background-color: #9588f2;
+      }
+      .article {
+        background-color: #485373;
+        padding: 10px;
+      }
+      .article.headings {
+        background-color: #f2eeb6;
+        padding: 10px;
+      }
+      .paragraph {
+        background-color: #ffffff;
+        padding: 10px;
+      }
+      .grid-paragraph-aside {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+      }
+      .aside {
+        background-color: #c7f544;
+        padding: 10px;
+      }
+      .footer {
+        background-color: #ff7769;
+        padding: 5px;
+      }
+    </style>
+    <title>HTML Sections - Structure</title>
+  </head>
+  <body>
+    <div class="body">
+      <p>body</p>
+      <header class="header">
+        <p>header</p>
+        <h1 class="headingOne">h1</h1>
+        <nav class="header nav">
+          <p>nav</p>
+          <ul class="header ul">
+            <p>ul</p>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <p>main</p>
+        <div class="sections">
+          <section class="secLeft">
+            <p class="section">section</p>
+            <header class="secLeft header">
+              <p>header</p>
+              <h2 class="secLeft headings">h2 ~ h6</h2>
+            </header>
+            <nav class="secLeft nav">
+              <p>nav</p>
+              <ul class="secLeft ul">
+                <p>ul</p>
+              </ul>
+            </nav>
+            <footer class="secLeft footer"><p>footer</p></footer>
+          </section>
+
+          <section class="secRight">
+            <p class="section">section</p>
+
+            <header class="secRight header">
+              <p>header</p>
+              <h2 class="secRight headings">h2 ~ h6</h2>
+            </header>
+
+            <article class="secRight article">
+              <p>article</p>
+              <header class="secRight article header">
+                <p>header</p>
+                <h2 class="secRight article headings">h2 ~ h6</h2>
+              </header>
+
+              <p class="secRight article paragraph">p</p>
+
+              <p class="secRight article paragraph">p</p>
+
+              <footer class="secRight article footer"><p>footer</p></footer>
+            </article>
+
+            <article class="secRight article">
+              <p>article</p>
+              <header class="secRight article header">
+                <h2 class="secRight article headings">h2 ~ h6</h2>
+              </header>
+              <div class="grid-paragraph-aside">
+                <p class="secRight article paragraph">p</p>
+                <aside class="secRight article aside"><p>aside</p></aside>
+              </div>
+              <footer class="secRight article footer">
+                <p>footer</p>
+              </footer>
+            </article>
+
+            <footer class="secRight footer"><p>footer</p></footer>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer"><p>footer</p></footer>
+    </div>
+  </body>
+</html>
