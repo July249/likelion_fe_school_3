@@ -1,0 +1,83 @@
+:root {
+  /* colors */
+  --bg-clr: #dddddd;
+  --header-clr: #ffffff;
+  --title-clr: #ff1493;
+  --container-clr: #efefef;
+  --list-outline-clr: #aaaaaa;
+  --list-selected-clr: #1e91ff;
+}
+
+/* Resets */
+h1 {
+  margin: initial;
+  font-size: inherit;
+}
+
+/* Styling */
+
+html {
+  background-color: var(--bg-clr);
+}
+
+#app {
+  width: 400px;
+  margin: 100px auto;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-clr);
+}
+
+header {
+  height: 112px;
+  background-color: var(--header-clr);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 30px 30px 0 0;
+  margin-bottom: 6px;
+}
+
+.color-tag {
+  width: 10px;
+  height: 32px;
+  background-color: var(--title-clr);
+}
+
+.title {
+  font-size: 24px;
+  color: var(--title-clr);
+  margin-left: 20px;
+  padding: 20px 0;
+}
+
+.list-container {
+  padding: 14px 30px 30px;
+  border-radius: 0 0 30px 30px;
+  background-color: var(--container-clr);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  border: 5px solid var(--list-outline-clr);
+  border-radius: 6px;
+  margin: 14px 0;
+}
+
+.item-desc {
+  font-size: 14px;
+  padding: 10px;
+  margin: 0;
+}
+
+.selected {
+  border: 5px solid var(--list-selected-clr);
+}
+
+.selected .item-desc {
+  color: var(--list-selected-clr);
+}
