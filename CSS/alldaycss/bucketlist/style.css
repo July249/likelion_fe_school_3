@@ -1,5 +1,5 @@
 :root {
-  /* colors */
+  /* color */
   --bg-clr: #dddddd;
   --header-clr: #ffffff;
   --title-clr: #ff1493;
@@ -15,7 +15,6 @@ h1 {
 }
 
 /* Styling */
-
 html {
   background-color: var(--bg-clr);
 }
@@ -52,13 +51,14 @@ header {
 }
 
 .list-container {
-  padding: 14px 30px 30px;
+  padding: 16px 30px;
   border-radius: 0 0 30px 30px;
   background-color: var(--container-clr);
 }
 
 .list {
   list-style: none;
+  margin: 0;
   padding: 0;
 }
 
