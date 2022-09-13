@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>overflow</title>
+    <style>
+      div {
+        overflow: hidden;
+        width: 100px;
+        height: 100px;
+      }
+      div {
+        /* x축은 숨기고, y축은 숨기지만 스크롤을 제공하여 잘린 나머지 부분을 확인 할 수 있게합니다. */
+        overflow: hidden visible;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img width="200px" src="http://www.paullab.co.kr/images/ceo.png" alt="" />
+    </div>
+  </body>
+</html>

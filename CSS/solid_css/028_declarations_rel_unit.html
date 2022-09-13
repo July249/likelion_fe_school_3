@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상대 길이 단위</title>
+    <style>
+      div {
+        /* 자식 요소로 들어갈수록 font-size가 2배씩 증가함 */
+        font-size: 2em;
+      }
+      /*
+      언제 rem을 쓰고, 언제 em을 사용하는가?
+
+      기본적으로 rem을 많이 쓰고 ex) 버튼(large, medium, small) 등에 텍스트의 비율에 따라 달라져야 할 경우 em을 씁니다! 
+      */
+    </style>
+  </head>
+  <body>
+    <!-- 16px -->
+    hello1
+    <div>
+      <!-- 32px -->
+      hello2
+      <div>
+        <!-- 64px -->
+        hello3
+        <div><!-- 128px -->hello world</div>
+      </div>
+    </div>
+  </body>
+</html>

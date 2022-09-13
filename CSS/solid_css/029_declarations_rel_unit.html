@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상대 길이 단위</title>
+    <style>
+      html {
+        font-size: 16px;
+      }
+      div {
+        /* html의 폰트사이즈(16px)를 기준으로 font-size가 2배 증가함 */
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 16px -->
+    hello1
+    <div>
+      <!-- 32px -->
+      hello2
+      <div>
+        <!-- 32px -->
+        hello3
+        <div><!-- 32px -->hello world</div>
+      </div>
+    </div>
+  </body>
+</html>

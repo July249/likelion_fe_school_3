@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+      마진 병합 현상은 일부러 의도한 css 입니다
+      대부분의 경우 문제로 여겨지지 않고, 해결하지 않아도 되는 파트입니다
+      */
+      /* 형제 간의 마진 겹침현상 */
+      div:nth-child(1) {
+        margin-bottom: 30px;
+        background-color: blue;
+      }
+      div:nth-child(2) {
+        margin-top: 60px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">hello</div>
+    <div class="">hello</div>
+  </body>
+</html>

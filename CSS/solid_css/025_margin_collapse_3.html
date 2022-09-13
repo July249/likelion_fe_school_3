@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        /* div의 마진이 겹치지 않게 하기 위한 setting */
+        margin: 0;
+        /* body의 영역을 넘어가는 배경색이 적용됨! 왜 그러지? */
+        /* html 영역까지 넘어서 적용되는 이유는? */
+        background-color: red;
+      }
+      div {
+        /* body의 마진과 병합이 되어버림 */
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>hello world</div>
+  </body>
+</html>

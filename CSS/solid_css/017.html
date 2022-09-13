@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div:nth-child(1) {
+        width: 100px;
+        height: 100px;
+        border: 10px solid black;
+        color: red;
+        /* 시계방향으로... 위(00시) 오른쪽(03시) 아래쪽(06시) 왼쪽(09시) 모두 한꺼번에 */
+        padding: 10px;
+      }
+      div:nth-child(2) {
+        width: 100px;
+        height: 100px;
+        border: 10px solid black;
+        color: blue;
+        /* 시계방향으로... 위(00시) 오른쪽(03시) 아래쪽(06시) 왼쪽(09시) 각각 */
+        padding: 10px 20px 10px 20px;
+      }
+      div:nth-child(3) {
+        width: 100px;
+        height: 100px;
+        border: 10px solid black;
+        color: green;
+        /* 상하, 좌우 */
+        padding: 10px 20px;
+      }
+      div:nth-child(4) {
+        width: 100px;
+        height: 100px;
+        border: 10px solid black;
+        color: green;
+        /* 상, 좌우, 하 */
+        padding: 10px 50px 20px;
+      }
+      div:nth-child(5) {
+        /* 12시, 3시와 6시, 9시를 각각 */
+        /* 상, 좌우, 하 */
+        padding-top: 10px;
+        /*
+          아래와 같이 각각 줄 수 있습니다.
+          padding-top: 10px;
+          padding-right: 50px;
+          padding-bottom: 20px;
+          padding-left: 50px;
+          */
+        width: 100px;
+        height: 100px;
+        border: 10px solid black;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">hello</div>
+    <div class="">hello</div>
+    <div class="">hello</div>
+    <div class="">hello</div>
+    <div class="">hello</div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* !important가 둘 다 적용되어 있을 때에는 순서에 영향(캐스케이딩)을 받습니다. */
+      /* 1번 */
+      /*
+      .two {
+        color: blue !important;
+      }
+      .one {
+        color: red !important;
+      }
+      */
+      /* 2번 */
+
+      .one {
+        color: red !important;
+      }
+      .two {
+        color: blue !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 클래스의 순서는 의미가 없다 -->
+    <div class="one two">hello world</div>
+    <div class="two one">hello world</div>
+    <!-- important는 inline css 보다 우선합니다  -->
+    <div class="two" style="color: green">hello world</div>
+  </body>
+</html>

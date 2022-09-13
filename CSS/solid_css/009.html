@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="005.css" />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="footer.css" />
+    <style>
+      #one {
+        color: red;
+      }
+    </style>
   </head>
   <body>
-    <h1>hello</h1>
+    <!-- id는 문서 내에서 유일하게 사용하여야 한다 -->
+    <a href="#one"></a>
+    <h1 id="one"></h1>
   </body>
 </html>

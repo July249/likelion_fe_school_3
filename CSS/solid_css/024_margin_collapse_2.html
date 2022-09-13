@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 부모 자식간의 마진 겹침 현상 */
+      .parent {
+        height: 200px;
+        margin-top: 50px;
+        background-color: red;
+        /* 해결 방법 */
+        /* overflow: hidden; */
+        /* display: inline-block; */
+        /* border: 3px solid black; */
+        /* border를 넣으면 마진 겹침 현상이 해결은 되는데 .. 디자인적인 요소를 너무 불필요하게 넣는 문제가 생김 */
+      }
+      .child {
+        margin-top: 100px;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
