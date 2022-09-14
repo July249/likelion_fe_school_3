@@ -1,3 +1,9 @@
+/* Resets */
+h1 {
+  margin: initial;
+  font-size: inherit;
+}
+
 body {
   background-color: #ddd;
 }
