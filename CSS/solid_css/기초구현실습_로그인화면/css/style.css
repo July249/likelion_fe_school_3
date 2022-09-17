@@ -1,0 +1,143 @@
+/* import Spoqa Han Sans Neo font */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+:root {
+  /* font-family */
+  --text-font: 'Spoqa Han Sans Neo', Sans-serif;
+  /* font-weight */
+  --text-weight: 400;
+  --login-weight: 500;
+  /* font-size */
+  --small-size: 12px;
+  /* line-height */
+  --text-height: 15px;
+
+  /* color */
+  --login-items-clr: #767676;
+  --login-link-clr: #711bff;
+  --welcome-clr: #000;
+  --border-clr: #dbdbdb;
+  --bg-clr: #fff;
+}
+
+/* Resets */
+@import url('./reset.css');
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #eee;
+}
+
+/* DO NOT USE flex!! */
+
+#login {
+  box-sizing: border-box;
+  width: 350px;
+  height: 140px;
+  margin: 100px auto;
+  background-color: var(--bg-clr);
+  border: 1px solid var(--border-clr);
+  border-radius: 5px;
+  padding: 3px 16px 2px;
+}
+
+.screen-out {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+/* login welcome message */
+.login-welcome-Msg {
+  font-family: var(--text-font);
+  font-style: normal;
+  font-weight: var(--text-weight);
+  font-size: var(--small-size);
+  line-height: var(--text-height);
+  color: var(--welcome-clr);
+  margin: 0;
+  padding: 8px 0;
+}
+
+/* login link */
+.login-link {
+  width: 318px;
+  height: 40px;
+  background-color: var(--login-link-clr);
+  border-radius: 4px;
+  display: block;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.logo-img {
+  position: relative;
+  top: 10px;
+  width: 64px;
+  height: 18px;
+  margin-right: 4px;
+}
+
+.txt-login {
+  font-family: var(--text-font);
+  font-size: var(--small-size);
+  line-height: var(--small-size);
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  top: 7px;
+}
+
+/* login items */
+.login-items {
+  margin: 14px 0;
+  padding: 2px 0 4px;
+  overflow: hidden;
+}
+
+.find-userInfo {
+  float: left;
+  vertical-align: bottom;
+}
+
+.signIn {
+  float: right;
+  vertical-align: bottom;
+}
+
+.lock-img,
+.person-img {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 3px;
+  margin-right: 4px;
+}
+
+.item-desc {
+  font-family: var(--text-font);
+  font-style: normal;
+  font-weight: var(--text-weight);
+  font-size: var(--small-size);
+  line-height: var(--text-height);
+  color: var(--login-items-clr);
+  position: relative;
+  right: 5px;
+}
+
+.find-pwd {
+  position: relative;
+  right: 17px;
+}
+
+.bar {
+  position: relative;
+  right: 11px;
+  margin: 0 4px;
+}
