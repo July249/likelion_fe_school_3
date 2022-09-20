@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>relative-absolute</title>
+    <style>
+      .box1 {
+        position: relative;
+        top: 40px;
+        background-color: green;
+        color: white;
+        width: 100px;
+        height: 100px;
+      }
+      .box2 {
+        position: absolute;
+        top: 40px;
+        background-color: red;
+        color: white;
+        width: 100px;
+        height: 100px;
+      }
+      .box3 {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        background-color: blue;
+        color: white;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box3">box3</div>
+    <div class="box1">
+      box1
+      <div class="box2">box2</div>
+    </div>
+  </body>
+</html>

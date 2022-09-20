@@ -1,0 +1,88 @@
+<!DOCYPE html>
+<html>
+  <head>
+    <title>텍스트 정렬</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      div {
+        border: 5px solid blue;
+        /* 마진의 오차만큼 hello world 3가 밀립니다. */
+        margin: 10px;
+        width: 500px;
+      }
+
+      span {
+        border: 5px solid black;
+      }
+
+      .text_center {
+        text-align: center;
+      }
+
+      .text_left {
+        text-align: left;
+      }
+
+      .text_right {
+        text-align: right;
+      }
+
+      .one {
+        margin: 0 auto;
+      }
+
+      .two {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      a {
+        display: block;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- text, inline과 inline block을 정렬 -->
+    <!-- 'text-align: center'는 text, inline, inline-block요소의 가운데 정렬 -->
+    <!-- 'margin: 0 auto'는 block요소의 가운데 정렬 -->
+    <!-- 'transform: translateX(-50%)와 left: 50%를 섞어 사용하는 기법'은 block요소의 가운데 정렬  -->
+    <div class="text_left">
+      <span>왼쪽 정렬</span>
+    </div>
+
+    <div class="text_right">
+      <span>오른쪽 정렬</span>
+    </div>
+
+    <div class="text_center">
+      <span>가운데 정렬</span>
+    </div>
+
+    <div class="one">
+      <span>hello world 1</span>
+    </div>
+
+    <div>
+      <span class="one">hello world 2</span>
+    </div>
+
+    <div class="two">
+      <span>hello world 3</span>
+    </div>
+
+    <div>
+      <span class="two">hello world 4</span>
+    </div>
+
+    <!-- 
+        위에 블록 요소를 주지 않고 
+        a를 block으로 한 다음 text-align:center를 줄 경우 
+        안에 click이 인라인 요소처럼 처리되어 중앙정렬이 됩니다.
+    -->
+    <a href="#">Click!</a>
+  </body>
+</html>

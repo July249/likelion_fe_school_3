@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertical Align</title>
+    <style>
+      .container {
+        border: 1px solid black;
+        line-height: 1; /* half-leading을 제거하게 된다 === 폰트 사이즈 높이를 같게 만든다 */
+      }
+      .one {
+        /* vertical-align: baseline; */
+        /* vertical-align: top; */
+        /* vertical-align: text-top; */
+        /* vertical-align: bottom; */
+        /* vertical-align: text-bottom; */
+        /* vertical-align: middle; */
+        font-size: 10px;
+      }
+      .two {
+        font-size: 20px;
+      }
+      .three {
+        font-size: 40px;
+        vertical-align: bottom;
+      }
+      img {
+        /* 이미지 하단의 빈 공간을 제거하기 위해서 */
+        vertical-align: top;
+        /* vertical-align: bottom; */
+        /* display: block; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    **인라인 요소**의 수직 정렬을 맞추기 위해 사용하는 속성입니다.
+        
+    1. baseline : 베이스라인을 부모의 베이스 라인에 맞추어 정렬합니다.
+    2. sub: 베이스라인을 부모의 subscript(아래첨자)-baseline 에 맞추어 정렬합니다.
+    3. super : 베이스라인을 부모의 superscript(윗첨자)-baseline에 맞추어 정렬합니다.
+    4. top: 상단의 위치를 전체 라인의 상단으로 정렬합니다.
+    5. text-top: 상단의 위치를 부모 엘리먼트의 상단으로 정렬합니다.
+    6. bottom: 하단의 위치를 전체 라인의 하단으로 정렬합니다.
+    7. text-bottom: 하단의 위치를 부모 엘리먼트의 하단으로 정렬합니다.
+    8. middle : 폰트의 중간 위치를 부모의 baseline + x-height의 절반에 해당하는 위치로 정렬합니다.
+    -->
+    <!-- 
+    vertical-align: baseline;
+    vertical-align: sub;
+    vertical-align: super;
+    vertical-align: top;
+    vertical-align: text-top;
+    vertical-align: bottom;
+    vertical-align: text-bottom;
+    vertical-align: middle;
+    -->
+    <div class="container">
+      <sub>hello</sub>
+      <sup>world</sup>
+      <sapn class="one">Lorem ipsum</sapn>
+      <sapn class="two">dolor sit amet</sapn>
+      <sapn class="three">consectetur adipisicing</sapn>
+    </div>
+    <div class="container">
+      <img
+        width="100px"
+        src="https://www.tvn-2.com/nacionales/Imagen-ilustrativa-gato-medio-bosque_18585331.jpg"
+        alt=""
+      />
+    </div>
+  </body>
+</html>

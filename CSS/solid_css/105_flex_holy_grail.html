@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 592px;
+        height: 538px;
+        padding: 20px;
+        background-color: rgb(70 111 166);
+        display: flex;
+        flex-direction: column;
+        color: white;
+      }
+      .header {
+        height: 94px;
+        background-color: rgb(150 201 242);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .main {
+        display: flex;
+        margin: 20px 0;
+      }
+      .section {
+        height: 300px;
+        margin-right: 20px;
+        background-color: rgb(72 83 115);
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .aside {
+        color: black;
+        height: 300px;
+        background-color: rgb(199 245 68);
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .footer {
+        height: 94px;
+        background-color: rgb(255 119 105);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .header,
+      .section,
+      .aside,
+      .footer {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"><p class="name">header</p></div>
+      <div class="main">
+        <div class="section"><p class="name">section>article</p></div>
+        <div class="aside"><p class="name">aside</p></div>
+      </div>
+      <div class="footer"><p class="name">footer</p></div>
+    </div>
+  </body>
+</html>

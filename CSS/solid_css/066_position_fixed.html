@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .nav {
+        font-family: 'Pacifico', cursive;
+        /* 
+        fixed는 현재 사용자가 보고 있는 브라우저 화면(뷰포트)를 기준으로 마치 화면에 붙은 것처럼 그 자리에 계속해서 위치
+        */
+        position: fixed;
+        padding: 10px;
+        background-color: brown;
+        color: white;
+        font-size: 28px;
+        width: 100%;
+        height: 45px;
+      }
+
+      .container {
+        margin-top: 0;
+        padding-top: 120px;
+        margin-left: 20px;
+      }
+
+      .dark-mode {
+        font-family: 'Pacifico', cursive;
+        font-size: 23px;
+        position: fixed;
+        width: 200px;
+        height: 40px;
+        background-color: brown;
+        border-radius: 7px;
+        color: white;
+        bottom: 50px;
+        right: 50px;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">hello</div>
+    <div class="container">(lorem+br)*100</div>
+    <div class="dark-mode">dark</div>
+  </body>
+</html>

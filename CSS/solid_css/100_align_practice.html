@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>align-items Practice</title>
+    <style>
+      /* align-items는 stretch가 기본값이다. 부모의 높이를 갖게된다. */
+      .container {
+        width: 300px;
+        height: 300px;
+        background-color: rgb(65, 188, 219);
+        display: flex;
+        /*
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        */
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+      .item {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(231, 108, 60);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex-wrap</title>
+    <style>
+      /* 부모의 넓이에 따라 자식들을 줄바꿈하도록 하는 기능 */
+      /* 마치 float 속성이 적용된 자식 요소들이 부모의 넓이 따라 아래로 떨어지는 모습과 유사 */
+      .container {
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .item {
+        border: 5px solid black;
+        width: 45px;
+        height: 50px;
+        padding: 20px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">hello</div>
+      <div class="item">hello</div>
+      <div class="item">hello</div>
+      <div class="item">hello</div>
+      <div class="item">hello</div>
+      <div class="item">hello</div>
+      <div class="item">hello</div>
+      <div class="item">hello</div>
+      <div class="item">hello</div>
+      <div class="item">hello</div>
+    </div>
+  </body>
+</html>

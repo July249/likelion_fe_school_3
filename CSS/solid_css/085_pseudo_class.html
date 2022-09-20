@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 0부터 시작하지 않습니다 */
+      /*
+      div:nth-child(1) {
+        background-color: red;
+      }
+      */
+
+      /* 그런데 말입니다! n은 0부터 시작합니다 */
+      /*
+      div:nth-child(n) {
+        background-color: red;
+      }
+      */
+      /*
+      div:nth-child(2n) {
+        background-color: red;
+      }
+      div:nth-child(2n + 1) {
+        background-color: blue;
+      }
+      */
+
+      /* odd(홀수) even(짝수) 키워드를 사용할 수 있습니다 */
+      /*
+      div:nth-child(odd) {
+        background-color: red;
+      }
+      */
+
+      /* 
+      :visited는 사용자가 방문한 적이 있는 링크를 나타냅니다
+      :visited가 바꿀 수 있는 스타일은 개인정보 보호를 위해 매우 제한적입니다
+      */
+      /*
+      a:visited {
+        color: red;
+      }*/
+
+      /* 부정 가상 선택자 */
+      /* IE에서 지원이 안되므로 향후 5년 안에는 사용이 불가함 */
+      li:not(.one) {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    가상 클래스 선택자 : 클래스가 없는데 있는 것처럼 처리 (:)
+    가상 요소 선택자 : 요소가 없는데 있는 것처럼 처리 (::)
+    -->
+    <a href="https://paullab.co.kr">hello</a>
+    <a href="https://paullab.co.kr">hello</a>
+    <div>hello</div>
+    <div>hello</div>
+    <div>hello</div>
+    <div>hello</div>
+    <div>hello</div>
+    <div>hello</div>
+    <ul>
+      <li>hello wordl</li>
+      <li>hello wordl</li>
+      <li class="one">hello wordl</li>
+      <li>hello wordl</li>
+      <li>hello wordl</li>
+    </ul>
+  </body>
+</html>

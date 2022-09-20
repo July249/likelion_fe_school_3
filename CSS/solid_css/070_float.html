@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float</title>
+    <style>
+      div {
+        overflow: visible;
+      }
+      figure {
+        float: left;
+        margin: 0 10px;
+        background-color: royalblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <!-- 
+      자식한테 float 속성을 설정하면 자식 요소들은 붕 띄워진 상태(floating)이기 때문에 부모 요소가 자식 박스들의 존재를 인식하지 못합니다. 
+      -->
+      <figure>
+        <img src="https://via.placeholder.com/100" alt="" />
+        <figcaption>Lorem ipsum</figcaption>
+      </figure>
+      <figure>
+        <img src="https://via.placeholder.com/100" alt="" />
+        <figcaption>Lorem ipsum</figcaption>
+      </figure>
+      <figure>
+        <img src="https://via.placeholder.com/100" alt="" />
+        <figcaption>Lorem ipsum</figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

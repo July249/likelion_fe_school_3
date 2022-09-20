@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 선택된 텍스트의 기본 스타일입니다. */
+      ::selection {
+        color: gold;
+        background-color: red;
+      }
+
+      /* 선택자와 결합하여 사용된 선택된 텍스트의 스타일입니다. */
+      strong::selection {
+        color: white;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      가상 클래스 선택자 : 클래스가 없는데 있는 것처럼 처리 (:)
+      가상 요소 선택자 : 요소가 없는데 있는 것처럼 처리 (::)
+    -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam provident id
+      quam dolorum? Dicta quae quasi assumenda id ipsum exercitationem deserunt
+      earum similique cum provident maxime velit, incidunt, ab in. Possimus
+      beatae laboriosam dignissimos alias nihil deleniti consectetur? Eius
+      tenetur illo saepe tempora, quisquam quaerat dolore impedit iure
+      repellendus, ducimus recusandae beatae minus. Incidunt, neque expedita
+      beatae consectetur exercitationem sapiente. Eum, odio aut. Quos explicabo
+      culpa, eius repudiandae qui, in architecto repellendus iste nostrum ullam
+      ratione dolore quis deserunt aut? Similique quia obcaecati dolorem
+      exercitationem repellendus, maxime assumenda delectus quidem. Illum
+      officiis tempora excepturi a omnis atque ab ipsa commodi alias nesciunt
+      ducimus minima molestiae odio dolores cum, nemo velit repudiandae in amet
+      qui provident itaque? Nulla amet inventore possimus.
+    </p>
+  </body>
+</html>

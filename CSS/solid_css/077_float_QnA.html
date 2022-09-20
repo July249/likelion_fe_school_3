@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float</title>
+    <style>
+      figure {
+        float: left;
+        margin: 0 10px;
+        background-color: royalblue;
+      }
+      p {
+        clear: both;
+        margin: 100px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Q. p 요소의 상하 마진이 안먹히는 것 같은데 float는 아얘 flow가 달라서 그런건가요?? -->
+    <div>
+      <figure>
+        <img src="https://via.placeholder.com/100" alt="" />
+        <figcaption>Lorem ipsum</figcaption>
+      </figure>
+      <figure>
+        <img src="https://via.placeholder.com/100" alt="" />
+        <figcaption>Lorem ipsum</figcaption>
+      </figure>
+      <figure>
+        <img src="https://via.placeholder.com/100" alt="" />
+        <figcaption>Lorem ipsum</figcaption>
+      </figure>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+        voluptate saepe officiis repellat exercitationem quidem quasi aut
+        aperiam enim illum?
+      </p>
+    </div>
+  </body>
+</html>

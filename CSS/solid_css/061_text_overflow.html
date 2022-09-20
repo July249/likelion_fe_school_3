@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>text-overflow</title>
+    <style>
+      p {
+        overflow: hidden;
+
+        /* 자식요소들의 배치를 지정하는 속성입니다. flex의 예전 버전입니다. */
+        display: -webkit-box;
+
+        -webkit-line-clamp: 2; /*  블록 컨텐츠의 라인 수를 제한하는 속성입니다.*/
+        /* block-ellipsis가 자동으로 auto 설정됩니다. block-ellipsis를 제거하기 위해서는 두번째 속성으로 none을 넣으세요 */
+
+        /* 자식요소들의 배치를 수직으로 만드는 속성입니다. flex-direction의 예전 버전입니다. */
+        -webkit-box-orient: vertical;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, ad, autem
+      quaerat sed impedit cupiditate tenetur recusandae facere, alias ab nihil
+      nisi eligendi eaque ea molestiae dolore accusantium repellat maiores?
+    </p>
+  </body>
+</html>

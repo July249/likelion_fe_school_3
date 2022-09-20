@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transform</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background: dodgerblue;
+        transition: all 1s;
+        transform-origin: left;
+      }
+      /* 가운데를 중심으로 커지는 효과를 나타냅니다. */
+      .box:hover {
+        /* transform: scale(2); */
+        /*
+        transform: rotate(360deg) scale(2);
+        transform: rotate(1turn) scale(2);
+        transform: translate(100px, 100px);
+        transform: skew(40deg);
+        */
+        transform: rotate(100deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">hello world</div>
+  </body>
+</html>
