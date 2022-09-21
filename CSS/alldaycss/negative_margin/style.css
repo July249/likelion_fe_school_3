@@ -1,0 +1,61 @@
+body {
+  background-color: #000;
+}
+
+.wrapper {
+  width: 500px;
+  margin: 100px auto;
+  background-color: #efefef;
+  padding: 40px 15px;
+}
+
+.contents {
+  width: 400px;
+  margin: 5px auto;
+  text-align: center;
+  background-color: #fff;
+  /* overflow: hidden; */
+}
+
+.contents img {
+  width: 300px;
+  height: 300px;
+  background-color: orange;
+
+  /* negative margin  */
+  margin-top: -45px;
+  margin-bottom: -60px;
+  /*
+  네거티브 마진을 넣어준다는 것은 결국 이미지가 차지하는 공간 자체를 줄인다는 것과 동일하다
+  하지만 마진으로 이미지의 공간을 줄인다고 해서 이미지가 잘리지는 않는다
+  물론, 이미지의 부모 요소에 overflow:hidden을 추가해주면 당연히도 짤린다.
+  왜냐하면 할당된 공간에서 넘치고 있기 때문이다.
+  */
+}
+
+.contents h1 {
+  color: rgb(231, 193, 22);
+  text-decoration: underline;
+}
+
+.contents .desc {
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+footer {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+  background-color: #ddd;
+}
+
+footer p {
+  font-style: normal;
+  padding: 10px;
+  margin: 0;
+}
+
+footer span {
+  margin-right: 10px;
+}
