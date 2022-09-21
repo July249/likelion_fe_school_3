@@ -1,29 +1,143 @@
+:root {
+  /* color */
+  --bg-clr: #dddddd;
+  --header-clr: #ffffff;
+  --title-clr: #ff1493;
+  --container-clr: #efefef;
+  --list-border-clr: #aaaaaa;
+  --list-selected-clr: #1e91ff;
+}
+
 /* Resets */
 h1 {
   margin: initial;
-  font-size: inherit;
+  font-size: inherit; /* 16px; */
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  background-color: #ddd;
+  background-color: var(--bg-clr);
 }
 
 .wrapper {
-  background-color: antiquewhite;
+  background-color: var(--list-border-clr);
   width: 400px;
   margin: 100px auto;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 5px 10px lightgray;
 }
 
 .buckets {
-  background-color: #fff;
+  background-color: var(--header-clr);
 }
 
 .buckets-header {
-  border-bottom: 4px solid #ddd;
+  border-bottom: 4px solid var(--list-border-clr);
   padding: 40px 0;
+  overflow: hidden;
+}
+
+.buckets-header .title {
+  float: left;
+  font-size: 24px;
+  line-height: 1.3334;
+  padding-left: 20px;
+}
+
+.buckets-header::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 32px;
+
+  /* 
+  As float implies the use of the block layout, it modifies the computed value of the display values, in some cases:
+  
+  Specified value: inline-block
+  Computed Value: black
+
+  Msg: "inline-block is ignored due to the float. If 'float' has a value other than 'none', the box is floated and 'display' is treated as 'block'css(propertyIgnoredDueToDisplay)"
+  */
+  float: left;
+  /* float: left 경고를 제거하려면 position: absolute 밖에 방법이 없기는 하다. */
+  vertical-align: bottom;
+  background-color: var(--title-clr);
+}
+
+.buckets-header .add-list {
+  float: right;
+  margin: 0 30px;
+  background-color: #4d84fb;
+  color: var(--header-clr);
+  border: none;
+  box-shadow: 1px 1px 2px 1px #cacadd;
+  padding: 8px 30px;
 }
 
 .buckets-contents {
-  background-color: #efefef;
+  background-color: var(--container-clr);
   padding: 30px;
+}
+
+.lists .list-item {
+  background-color: white;
+  border: 4px solid var(--list-border-clr);
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.list-item .check-box {
+  margin: 0;
+}
+
+.list-item label {
+  width: auto;
+  margin-left: 11px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.selected label {
+  /* text-decoration: line-through; */
+}
+
+.selected label::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 20px;
+  background-color: red;
+}
+
+.lists .selected {
+  border-color: var(--list-selected-clr);
+  color: var(--list-selected-clr);
+}
+
+.lists .list-item:last-child {
+  margin-bottom: 0;
+}
+
+.check-box {
+  border: 4px solid var(--list-border-clr);
+  width: 24px;
+  height: 24px;
 }
