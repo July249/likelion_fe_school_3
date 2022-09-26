@@ -1,0 +1,155 @@
+/* Resets */
+h1,
+h2,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: url('./images/background.gif') no-repeat;
+  background-size: cover;
+}
+
+/* wrapper */
+.wrapper {
+  width: 800px;
+  margin: 40px auto;
+  background: pink;
+}
+
+/* header */
+.header {
+  text-align: center;
+  padding: 100px 0 60px;
+  background: url('./images/cover04.png') no-repeat;
+  background-size: cover;
+}
+
+.profileImg {
+  width: 150px;
+  height: 150px;
+  border: 5px solid #fff;
+  border-radius: 50% / 30%;
+}
+
+.name,
+.role {
+  color: #fff;
+}
+
+.name {
+  margin-bottom: 15px;
+  font-size: 72px;
+  font-weight: bold;
+}
+
+.role {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  border-top: 4px solid #fff;
+}
+
+/* contents */
+.contents {
+  width: 760px;
+  padding: 20px;
+  background: rgb(230, 230, 230);
+}
+
+.info,
+.skills {
+  margin-bottom: 20px;
+  padding: 20px 20px;
+  background-color: #fff;
+}
+
+.info {
+}
+
+.info h2,
+.skills h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff1493;
+}
+
+.info ul,
+.skills ul {
+  border-left: 3px solid lightgray;
+  margin: 15px 0 10px;
+}
+
+.info h2 {
+  background: url('./images/icon-information.png') no-repeat;
+  background-size: 10%;
+}
+
+.skills h2 {
+  background: url('./images/icon-skills.png') no-repeat;
+}
+
+.info li,
+.skills li {
+  color: gray;
+  padding-left: 10px;
+}
+
+.info li:hover,
+.skills li:hover {
+  color: #ff9dd1;
+}
+
+/* footer */
+.footer {
+  height: 30px;
+  padding: 25px 0;
+  text-align: center;
+  background-color: white;
+}
+
+.sns {
+  color: lightgray;
+  background: none;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+.github:hover {
+  border-color: inherit;
+  color: limegreen;
+}
+
+.facebook:hover {
+  color: rgb(71, 71, 255);
+  border-color: inherit;
+}
+
+.contact:hover {
+  color: black;
+  border-color: inherit;
+}
