@@ -1,0 +1,22 @@
+.info {
+  font-size: 15px;
+  line-height: 1.34;
+  text-align: right;
+}
+.info span {
+  line-height: 1.34;
+}
+
+/*error
+.one {
+  line-height: $line-normal;
+}
+*/
+.main-box p {
+  font-size: 15px;
+}
+.main-box a {
+  font-size: 15px;
+  color: blue;
+  text-decoration: none;
+}/*# sourceMappingURL=008_variable_scope.css.map */

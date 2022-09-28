@@ -1,0 +1,16 @@
+// for ($변수) from (시작) through(끝){
+// 	// 반복할 내용
+// }
+
+@for $i from 1 through 3 {
+  .photo-box:nth-child(#{$i}) {
+    background-image: url('../assets/phoster#{$i}.png');
+  }
+}
+
+@for $j from 1 through 3 {
+  .photo-box:nth-child(#{$j}) {
+    background-image: url('../assets/phoster#{$j}.png');
+    background-position: center;
+  }
+}

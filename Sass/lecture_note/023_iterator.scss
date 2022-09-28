@@ -1,0 +1,8 @@
+// #{$변수명}
+
+@for $i from 1 through 3 {
+  .profile-#{$i} {
+    background: red;
+    font-size: #{$i * 10px};
+  }
+}

@@ -1,0 +1,13 @@
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+a {
+  width: 100px;
+  height: 100px;
+  color: white;
+  background-color: black;
+}/*# sourceMappingURL=016_content.css.map */
