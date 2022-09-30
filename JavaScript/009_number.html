@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      let n1 = 10000;
+      let n2 = 10.1;
+      let n3 = 31;
+      let n4 = 1001;
+      let n5 = 1111; // 무시
+      let s1 = '1000000000';
+      let s2 = '1,000,000,000';
+      console.log(parseInt(n1)); // 10000
+      console.log(parseInt(n2)); // 10
+      console.log(parseInt(n3, 2)); // NaN
+      console.log(parseInt(n4, 2)); // 9
+      console.log(parseInt(n5, 2)); // 15
+      console.log(n2.toFixed(3)); // 소수점 3번째 자리까지 출력 (자주 사용됨)
+
+      console.log('-------');
+      console.log(Number(true));
+      console.log(Number(false));
+      console.log(Number(''));
+      console.log(Number(' ')); // return 0 => false
+      console.log(!!' '); // true
+
+      console.log('-------');
+      console.log(Number('hello'));
+      console.log(Number('10 20'));
+      console.log(Number('10     '));
+      console.log(Number('     10'));
+      console.log(Number('     10     '));
+
+      console.log('-------');
+      console.log(Math.PI); // 3.141592653..
+      console.log(Math.abs(-10)); // 10
+      console.log(Math.max(10, 20, 30, 1, 200, 3)); // 200
+      console.log(Math.min(10, 20, 30, 1, 200, 3)); // 1
+
+      console.log('-------');
+      let data = [10, 20, 30, 40];
+      console.log(Math.max(data)); // NaN (배열의 타입이 숫자가 아니라서...)
+      console.log(Math.max(...data)); // 40
+
+      console.log('-------');
+      console.log(Math.round(4.7)); // 5
+      console.log(Math.round(4.4)); // 4
+
+      console.log('-------');
+      console.log(Math.random()); // 0 초과 1 미만의 소수
+      console.log(Math.floor(Math.random() * 10)); //1부터 9 사이 값
+
+      console.log('-------');
+      console.log(Math.sqrt(16)); // 4
+
+      console.log('-------');
+      console.log(Math.pow(10, 2)); // 100
+
+      // Note
+      // 컴퓨터의 10진수 연산은 정확하지 않다 => 부동소수점 이슈
+      // ex. 0.1 + 0.2 = 0.3000000000000004
+
+      // Note
+      // 숫자가 일정 크기 이상을 넘어가면 BigInt를 사용한다.
+      /*
+      123123123141241222312 + 2 = 123123123141241230000
+
+      123123123141241222312n + 2n = 123123123141241222314n (정확하게 계산하여 준다)
+
+      BigInt는 보통 사용자의 업로드 데이터양을 제한하는 일을 할 때 자주 사용하게 된다.
+
+      1bit = 0과 1을 표현할 수 있는 최소 단위
+      8bit = 1byte
+
+      00000000 ~ 11111111 (0 ~ 255)
+          ex) 0.0.0.0 ~ 255.255.255.255
+      1024byte = 1KB
+      1024KB = 1MB
+      1024MB = 1GB
+      1024GB = 1TB
+      (KB,MB,GB,TB,PB)갈매기털빼
+      */
+    </script>
+  </body>
+</html>

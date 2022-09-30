@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+  </head>
+  <body>
+    <script>
+      // string, 문자열
+      let txt = 'ABCDEFGHIEJK';
+      let txt2 = 'mom said "hello world"';
+      let txt3 = "mom said 'hello world'";
+      let txt4 = 'a\nb\ncde';
+      let txt5 = 'a\tbcde';
+      let txt6 = '10';
+      let txt7 = '10abc'; // '10.1', '100.1abc' (parseInt)
+      let txt8 = 'abc10';
+      let txt9 = '10.1abc';
+
+      console.log(txt + txt); // ABCDEFGHIJKABCDEFGHIJK
+      console.log(txt[0]); // A
+      console.log(txt[4] + txt[5] + txt[6]);
+      console.log(txt2);
+      console.log(txt3);
+      console.log(txt4);
+      /*
+      a
+      b
+      cde
+      */
+      console.log(txt5); // a   bcde
+      console.log(txt6 + txt6); // 1010
+      console.log(parseInt(txt6) + parseInt(txt6)); // 20
+      console.log(parseInt(txt7) + parseInt(txt7)); // 20
+      console.log(Number(txt7) + Number(txt7)); // NaN
+      console.log(parseInt(txt8) + parseInt(txt8)); // NaN
+      console.log(parseFloat(txt9) + parseFloat(txt9)); // 20.2
+
+      console.log(typeof txt); // string
+      // console.dir(txt); // ABCDEFGHIJK
+
+      // String 메서드
+      console.log(txt.length);
+      console.log(txt.indexOf('E')); // 4 (index가 반환됨) (정규표현식을 허용하지 않습니다) (먼저 발견된 index만 반환하고 중지됩니다)
+      console.log(txt.indexOf('0')); // -1 (해당하는 값이 없으면 -1이 반환됨)
+      console.log(txt.search('0')); // -1
+      // indexOf, search는 false인 경우 -1을 반환하므로 참, 거짓 판별시 true가 반환된다. (0만 false로 인식하기 때문)
+      // 따라서 indexOf, search로 참거짓을 판별하는 것은 좋지 않다.
+      // 이를 방지하기 위한 대체재로 includes()가 있다.
+      // includes()
+      console.log("includes('E') = ", txt.includes('E')); // true
+      console.log("includes('0') = ", txt.includes('0')); // false
+      // includes()는 값이 없으면 false를 반환한다
+
+      /*
+      search 함수는 정규 표현식을 사용하여보다 복잡한 패턴, 대소 문자를 구분하지 않는 문자열 등을 비교할 수 있으며 
+      indexOf 함수는 단순히 리터럴 문자열과 일치합니다. 
+      그러나 indexOf를 사용하면 시작 색인을 지정할 수도 있습니다.
+      */
+
+      let regExp = /CD/;
+      console.log(txt.search(regExp)); // 2 (먼저 발견된 index만 반환하고 중지됩니다)
+
+      /* 정규표현식 */
+      let input = 'abcAHelloBC';
+      regExp = /[A-Z]/g;
+      console.log(input.search(regExp)); // 3 (먼저 발견된 index만 반환하고 중지됩니다)
+
+      // slice(시작index, 종료index) => 시작 index에서 종료 index - 1 까지 반환한다
+      console.log(input.slice(2, 5)); // cAH
+
+      // substr(시작index, 길이) => 시작 index에서 길이만큼의 문자열을 반환한다
+      console.log(input.substr(2, 5)); // cAHel
+
+      // subString() => 시작 index에서 종료 index - 1 까지 반환한다
+      console.log(input.substring(2, 5)); // cAH
+
+      /* slice()와 subString()의 차이점 
+      
+      시작 index가 종료 index보다 값이 큰 경우, ex. slice(5, 1)일 때 반환하는 값이 다르다
+
+      substring은 start와 end의 위치를 바꾸어 결과를 계산한다
+      즉, substring(5, 0) => substring(0, 5)로 변경되어 동작한다
+      반면, slice(5, 0) => 빈 문자열을 리턴한다
+
+      slice(시작인덱스, 종료인덱스) : 시작인덱스부터 종료인덱스-1까지 반환합니다.
+        console.log(txt2.slice(1, 3));
+        console.log(txt2.slice(3, 1)); // 작동하지 않습니다.
+        console.log(txt2.slice(2));
+
+      substring(시작인덱스, 종료인덱스) : 시작인덱스부터 종료인덱스-1까지 반환합니다.
+        console.log(txt2.substring(1, 3));
+        console.log(txt2.substring(3, 1)); // 작동합니다.
+        console.log(txt2.substring(2));
+      */
+      // substr() 대신 substring() 또는 slice() 이용을 권고
+      // 하지만 substr()이 알고리즘 관리할 때는 좋음
+
+      // replace()
+      input = 'paullab CEO leehojun CEO';
+      console.log(input);
+      console.log(input.replace('CEO', 'CTO')); // 처음 만나는 CEO만 변경하고 종료된다
+      console.log(input); // replace 함수는 부수효과(input을 변경하는 효과)가 없다.
+      /* 정규표현식 적용 */
+      console.log(input.replace(/CEO/g, 'CTO')); // 모든 CEO를 변경한다
+      console.log(input.replaceAll('CEO', 'CTO')); // replaceAll은 모든 CEO를 변경한다
+
+      console.log(input.toUpperCase()); //
+      console.log(input.toLowerCase()); //
+      console.log(input);
+
+      // split
+      input = '010-1234-5678';
+      console.log(input.split('-')); // ['010', '1234', '5678']
+      console.log(input.split('')); // ['0', '1', '0', '-', '1', '2', '3', '4', '-', '5', '6', '7', '8']
+
+      // trim
+      input = '                abc';
+      console.log(input.trim()); // abc
+      input = 'abc                ';
+      console.log(input.trim()); // abc
+      input = '       a b c       ';
+      console.log(input.trim()); // a b c (사이 공백은 제거지 못한다)
+    </script>
+  </body>
+</html>
