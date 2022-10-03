@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>perspective</title>
+    <style>
+      .원본 {
+        display: flex;
+        width: 1000px;
+        height: 800px;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        margin: 100px auto;
+        perspective: 400px;
+        perspective-origin: top;
+        /* perspective-origin: bottom;
+        perspective-origin: 50% 50%; */
+        /* 위와 같은 의미입니다. */
+        /* perspective-origin: 500px 400px; */
+
+        /* One-value syntax */
+        /* perspective-origin: x-position; */
+
+        /* Two-value syntax */
+        /* perspective-origin: x-position y-position; */
+      }
+
+      .회전패널 {
+        width: 200px;
+        height: 200px;
+        background: aqua;
+        transform: rotateY(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="원본">
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+    </div>
+  </body>
+</html>

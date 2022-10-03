@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Input Box</title>
+    <style>
+      .txt-hide {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+      }
+
+      .labl-hold::before {
+        content: ' ';
+        /* 가상 요소는 기본적으로 inline 요소이다 */
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        background-image: url('./images/icon_check_empty.png');
+        vertical-align: -5px;
+      }
+
+      .inp-hold:checked + .labl-hold::before {
+        background-image: url('./images/icon_check.png');
+      }
+
+      .inp-hold:focus + .labl-hold::before {
+        /* 접근성을 생각하면 outline 필요 */
+        outline: 2px solid #000;
+        outline-offset: 5px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    스타일링이 까다로운 input 요소를 화면에서 숨기고 label 요소를 연결하여 스타일링을 진행
+    -->
+    <a href="#">링크</a>
+    <button>버튼</button>
+    <input type="checkbox" name="" id="" />
+    <input type="checkbox" id="inpHold" class="inp-hold txt-hide" />
+    <label for="inpHold" class="labl-hold">선택해주세요</label>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Replacement</title>
+    <style>
+      .ir_pm {
+        /* PC용으로 사용된 이미지 내에서 의미있는 텍스트의 대체 텍스트를 제공시 */
+        display: block;
+        overflow: hidden;
+        font-size: 1px;
+        line-height: 0;
+        text-indent: -99px;
+        /* 모바일용으로 사용되는 이미지 내에서 의미있는 텍스트의 대체 텍스트를 제공할 때 */
+        display: block;
+        overflow: hidden;
+        font-size: 1px;
+        line-height: 0;
+        color: transparent;
+        /* transparent 키워드는 IE9부터 사용 가능하기 때문에 PC에서는 빠져있습니다.
+         https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#transparent */
+      }
+
+      .screen-out {
+        /* 스크린 리더가 읽을 필요는 없지만 마크업 구조상 필요한 경우 */
+        overflow: hidden;
+        position: absolute;
+        width: 0;
+        height: 0;
+        line-height: 0;
+        text-indent: -9999px;
+      }
+
+      .ir_wa {
+        /* 중요한 이미지 대체 텍스트로 이미지 off 시에도 대체 텍스트를 보여주고자 할 때 - 예시) 다음 메뉴 글자 */
+        display: block;
+        overflow: hidden;
+        position: relative;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+      }
+
+      .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        /* 
+        IE 구버전에서 인식을 못하는 경우가 있기 때문에 margin: -1px; 을 사용합니다.
+        clip 속성을 통해 요소를 잘라내는것도 가능합니다.
+        */
+        overflow: hidden;
+      }
+
+      .product-search a.search {
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        width: 50px;
+        height: 39px;
+        background-position: -112px -71px;
+        text-indent: -9em;
+      }
+    </style>
+  </head>
+  <body>
+    <button><span class="ir_wa">중요합니다.</span></button>
+  </body>
+</html>

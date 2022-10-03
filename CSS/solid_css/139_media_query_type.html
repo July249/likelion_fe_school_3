@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미디어쿼리 유형</title>
+    <style>
+      /* 인쇄 결과물 및 출력 미리보기 화면에 표시하는 경우입니다. */
+      @media print {
+        abbr::after {
+          /* attr() : css 속성 함수입니다. */
+          content: ' (' attr(title) ')';
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <abbr title="world wide web consortium">w3c</abbr>
+  </body>
+</html>

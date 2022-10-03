@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>perspective</title>
+    <style>
+      .원본 {
+        display: flex;
+        justify-content: space-between;
+        width: 1000px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 100px auto;
+        perspective: 400px;
+      }
+
+      .회전패널 {
+        width: 200px;
+        height: 200px;
+        background: aqua;
+        /* 같은 각도로 움직였는데 왜 박스의 위치가 다를까? */
+        /* 소실점(vanishing point)을 바라보고 틀어지는 각도가 다르기 때문이다 */
+        /* 여기서 소실점은 정 중앙이다. */
+        transform: rotateY(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="원본">
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+      <div class="회전패널"></div>
+    </div>
+  </body>
+</html>
