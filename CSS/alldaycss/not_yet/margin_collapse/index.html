@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        background-color: antiquewhite;
+      }
+      .wrapper {
+        background-color: #fff;
+        margin: 100px auto;
+        width: 260px;
+        /* 방법 1 부모와 자식 간의 마진 겹침을 해결하기 위해서는 중간에 padding 또는 border를 넣어서 해결할 수 있다 */
+        /* 방법 2 */
+        display: flow-root;
+      }
+      .box {
+        font-size: 100px;
+        text-align: center;
+        line-height: 200px;
+        background-color: orange;
+        color: rgba(255, 255, 255, 0.3);
+        width: 200px;
+        height: 200px;
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      블록 레벨 요소들의 인접한 상하 간에는 마진 겹침이 일어난다
+      box bottom이 
+    -->
+    <div class="wrapper">
+      <div class="box top">A</div>
+      <div class="box bottom">B</div>
+    </div>
+  </body>
+</html>

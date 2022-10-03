@@ -1,0 +1,23 @@
+body {
+  background-color: #ddd;
+}
+
+.wrapper {
+  background-color: antiquewhite;
+  width: 400px;
+  margin: 100px auto;
+}
+
+.buckets {
+  background-color: #fff;
+}
+
+.buckets-header {
+  border-bottom: 4px solid #ddd;
+  padding: 40px 0;
+}
+
+.buckets-contents {
+  background-color: #efefef;
+  padding: 30px;
+}
