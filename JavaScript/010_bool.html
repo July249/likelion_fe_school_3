@@ -4,9 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>boolean</title>
+    <title>bool</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      // const (참조 변경 불가), let (변경 가능), var (사용 불가)
+      let one = true;
+      let two = false;
+      let three;
+
+      console.log(Boolean('')); // false
+      console.log(Boolean(' ')); // true
+      console.log(Boolean('abc')); // true
+      console.log(Boolean(0)); // false
+      console.log(Boolean(100)); // true
+      console.log(Boolean(-100)); // true
+      console.log(Boolean(undefined)); // false
+      console.log(Boolean(null)); // false
+      console.log(Boolean(Infinity)); // true
+      console.log(Boolean(-Infinity)); // true
+
+      one = 0;
+
+      // 혼동하기 쉬운 경우 - 비어있는 배열, 객체
+      console.log(Boolean([])); // true
+      console.log(Boolean({})); //true
+
+      if (one) {
+        console.log('Hello');
+      } else {
+        console.log('World');
+      }
+    </script>
   </body>
 </html>

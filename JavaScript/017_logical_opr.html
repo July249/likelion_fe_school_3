@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>논리 연산자</title>
+  </head>
+  <body>
+    <script>
+      // && (and)
+      console.log(true && true); // true
+      console.log(true && false); // false
+      console.log(false && true); // false
+      console.log(false && false); // false
+      // || (or)
+      console.log('-----------');
+      console.log(true || true); // true
+      console.log(true || false); // true
+      console.log(false || true); // true
+      console.log(false || false); // false
+      // ! (not)
+      console.log('-----------');
+      console.log(!true); // false
+      console.log(!false); // true
+
+      // !! - true, false 평가
+      console.log('-----------');
+      console.log(!0); // true
+      console.log(!!0); // false
+      console.log(!''); // true
+      console.log(!!''); // false
+
+      // 혼동되는 것들...
+      console.log('-----------');
+      console.log(![]); // false
+      console.log(!![]); // true
+
+      console.log('-----------');
+      console.log('confuse_1');
+      console.log('false' == false); // false
+      console.log(!'false'); // false
+      console.log(!'0'); // false
+      console.log(!NaN); // true
+      console.log(!null); // true
+      console.log(!undefined); // true
+
+      // 단락평가
+      /* 
+      논리 연산자는 왼쪽에서 오른쪽의 순서로 평가하므로, 다음 규칙을 사용해서 "단락"(short-circuit) 평가가 가능한지 판별합니다.
+
+      false && 아무거나는 거짓으로 단락 평가합니다.
+      true || 아무거나는 참으로 단락 평가합니다.
+
+      논리 규칙은 위의 단락 평가가 항상 옳음을 보증합니다. 아무거나 부분의 표현식은 평가도 하지 않으므로, 해당 표현식에서 유발하게 되는 부수 효과도 전혀 발생하지 않음에 주의하세요.
+      참고로 ||을 사용한 두 번째 단락 평가의 경우, 최근 코드에서는 새로운 널 병합 연산자 (??)를 사용할 수도 있습니다. 널 병합 연산자는 첫 번째 연산자가 "널과 유사 (en-US)"한, 즉 null이거나 undefined일 때만 두 번째 피연산자를 반환합니다. ''와 0도 유효한 값이라면 널 병합 연산자가 기본 값을 나타낼 때 더 좋은 선택지입니다.
+      */
+
+      let username = '';
+      username = username || '이름을 입력하지 않았습니다.';
+      console.log(username); // 이름을 입력하지 않았습니다.
+
+      username = 'abc';
+      username = username || '이름을 입력하지 않았습니다.';
+      console.log(username); // abc
+
+      username = '';
+      username = username && '이름을 입력하지 않았습니다.';
+      console.log(username); // (아무것도 출력되지 않음)
+
+      username = 'abc';
+      username = username && '이름을 입력하지 않았습니다.';
+      console.log(username); // 이름을 입력하지 않았습니다.
+
+      // 문제
+      // username도 입력하고 pw도 입력해야만 회원가입 성공여부가 true false가 나오게 하세요
+      // 둘 중 하나라도 안 입력이 없으면 false
+      username = 'asdf';
+      pw = '';
+      isUsername = username || false;
+      isPassword = pw || false;
+      console.log(`성공여부 ${isUsername && isPassword}`);
+
+      // 참고사항
+      username = '';
+      username = username || false;
+      console.log(username);
+
+      username = 'abc';
+      username = username || 0;
+      console.log(username); // 0
+
+      // 드모르간의 법칙 - 코드를 이쁘게 만들 때 간혹 사용됨
+      console.log('-----------');
+      const x = 0;
+      const y = 1;
+      console.log(!(x || y) === (!x && !y));
+      console.log(!(x && y) === (!x || !y));
+
+      // 알고리즘 문제
+      let s = 0;
+      for (let i = 0; i < 10000; i++) {
+        // console.log(i);
+        if (i % 3 === 0 || i % 5 === 0) {
+          // console.log(i);
+          s += i;
+        }
+      }
+      console.log(s);
+
+      console.log(!!'true' == true);
+    </script>
+  </body>
+</html>
