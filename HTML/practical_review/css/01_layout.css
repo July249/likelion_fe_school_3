@@ -3,7 +3,6 @@
 }
 
 .max-width {
-  border: 2px solid royalblue;
   /* width: var(--max-width);
   max-width: calc(100% - 60px); */
   width: min(var(--max-width), calc(100% - 60px));
@@ -13,23 +12,55 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  /* footer를 항상 밑으로 하기 위해서 설정함 */
   min-height: 100vh;
 }
 
 header {
-  background-color: salmon;
+  /*  */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(1rem);
 }
+
+header > .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 80px;
+}
+
+header .gnb ul {
+  display: flex;
+  gap: 20px;
+}
+
+header .gnb ul li a {
+  padding: 10px 20px;
+}
+
+header .logo {
+  position: absolute;
+  left: 0;
+}
+
+header .btn-allmenu {
+  position: absolute;
+  right: 0;
+}
+
 main {
   background-color: sandybrown;
-  /* footer를 항상 밑으로 하기 위해서 설정함 */
   flex-grow: 1;
 }
 aside {
   background-color: aquamarine;
   position: fixed;
   top: 100px;
-  right: 0;
+  left: calc(50% + var(--max-width) / 2 + 24px);
   width: 124px;
 }
 footer {
