@@ -10,11 +10,20 @@
   margin: 0 auto;
 }
 
+.wrap {
+  display: flex;
+  flex-direction: column;
+  /* footer를 항상 밑으로 하기 위해서 설정함 */
+  min-height: 100vh;
+}
+
 header {
   background-color: salmon;
 }
 main {
   background-color: sandybrown;
+  /* footer를 항상 밑으로 하기 위해서 설정함 */
+  flex-grow: 1;
 }
 aside {
   background-color: aquamarine;
