@@ -1,0 +1,83 @@
+/* resets */
+
+html,
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+p {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Styling */
+:root {
+  font-family: 'Montserrat', sans-serif;
+
+  /* font-weight */
+  --normal-weight: 500;
+  --bold-weight: 700;
+
+  /* colors */
+  --main-clr: #51318b;
+  --sub-clr: #bd8fe8;
+  --tit-highlight-clr: #d9501a;
+  --tit-desc-clr: #a887e1;
+  --list-container-main-clr: #ffffff;
+  --list-desc-clr: #000000;
+
+  /* fonts */
+  --tit-main-size: 40px;
+  --txt-main-size: 30px;
+  --list-tit-size: 18px;
+  --list-desc-size: 14px;
+}
+
+body {
+  background-color: var(--main-clr);
+}
+
+.section {
+  margin: 100px auto;
+}
+
+.wrapper {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  width: inherit;
+  flex-direction: row;
+  margin-bottom: 100px;
+  /* temp */
+  background-color: aqua;
+}
+
+.section-header .title {
+  flex-shrink: 1;
+  width: 26%;
+  font-size: var(--tit-main-size);
+  /* temp */
+  background-color: blue;
+}
+
+.section-contents {
+  /* temp */
+  background-color: gold;
+}
