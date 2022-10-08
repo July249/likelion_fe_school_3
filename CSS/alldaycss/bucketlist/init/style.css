@@ -1,8 +1,4 @@
 /* resets */
-html {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 html,
 body,
 h1,
@@ -17,6 +13,10 @@ h1 {
 
 ol {
   list-style: none;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
