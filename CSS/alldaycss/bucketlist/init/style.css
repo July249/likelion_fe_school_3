@@ -1,4 +1,8 @@
 /* resets */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 html,
 body,
 h1 {
@@ -8,7 +12,6 @@ h1 {
 
 h1 {
   font-size: inherit;
-  font-weight: inherit;
 }
 
 body {
@@ -27,25 +30,16 @@ body {
 }
 
 .title {
+  color: #ff1493;
   padding: 40px 0;
   border-bottom: 4px solid #ddd;
 }
 
-h1 {
-  color: #ff1493;
+.title h1 {
   font-size: 1.5em;
-  font-weight: bold;
   line-height: 1;
-}
-
-h1::before {
-  content: ' ';
-  display: inline-block;
-  vertical-align: bottom;
-  width: 10px;
-  height: 24px;
-  background-color: #ff1493;
-  margin-right: 10px;
+  border-left: 10px solid;
+  padding-left: 20px;
 }
 
 .list-container {
