@@ -5,13 +5,18 @@ html {
 
 html,
 body,
-h1 {
+h1,
+ol {
   margin: 0;
   padding: 0;
 }
 
 h1 {
   font-size: inherit;
+}
+
+ol {
+  list-style: none;
 }
 
 body {
@@ -30,20 +35,38 @@ body {
 }
 
 .title {
-  color: #ff1493;
   padding: 40px 0;
+  color: #ff1493;
   border-bottom: 4px solid #ddd;
 }
 
 .title h1 {
-  font-size: 1.5em;
   line-height: 1;
-  border-left: 10px solid;
+  font-size: 1.5em;
   padding-left: 20px;
+  border-left: 10px solid;
 }
 
 .list-container {
-  height: 331px;
-  text-align: center;
+  padding: 30px;
   background-color: #efefef;
+}
+
+.bucketlist {
+  padding: 10px;
+  margin: 10px 0;
+  border: 4px solid #ddd;
+}
+
+.bucketlist:first-child {
+  margin-top: 0;
+}
+
+.bucketlist:last-child {
+  margin-bottom: 0;
+}
+
+.bucketlist.active {
+  color: #1e90ff;
+  border-color: #1e90ff;
 }
