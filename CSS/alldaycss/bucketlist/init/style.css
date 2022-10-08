@@ -7,6 +7,8 @@ h1 {
 }
 
 h1 {
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 body {
@@ -19,19 +21,35 @@ body {
 }
 
 .buckets {
-  background-color: #fff;
-  border-radius: 30px;
   overflow: hidden;
+  border-radius: 30px;
+  background-color: #fff;
 }
 
 .title {
-  text-align: center;
-  height: 108px;
+  padding: 40px 0;
   border-bottom: 4px solid #ddd;
 }
 
+h1 {
+  color: #ff1493;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1;
+}
+
+h1::before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: bottom;
+  width: 10px;
+  height: 24px;
+  background-color: #ff1493;
+  margin-right: 10px;
+}
+
 .list-container {
-  text-align: center;
   height: 331px;
+  text-align: center;
   background-color: #efefef;
 }
