@@ -1,0 +1,90 @@
+h1, ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+:root {
+    font-family: 'arial';
+}
+
+.wrapper {
+    width: 400px;
+    margin: 100px auto;
+}
+
+body {
+    background-color: #ddd;
+}
+
+.buckets {
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.buckets-header {
+    border-bottom: 4px solid #ddd;
+    padding: 40px 0;
+    color: deeppink;
+}
+
+.buckets-header h1 {
+    line-height: 1;
+    /*
+    margin-top: -0.05em;
+    margin-bottom: -0.24em;
+    */
+    border-left: 10px solid;
+    padding-left: 20px;
+}
+
+.buckets-contents {
+    background-color: #efefef;
+    padding: 30px;
+}
+
+.lists li {
+    background-color: white;
+    border: 4px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    /*
+    1번 방법을 위한 margin-bottom 
+    margin-bottom: 10px;
+    */
+}
+
+/*
+.lists li:last-child {
+    1번
+    margin-bottom: 0;
+}
+*/
+
+.lists li + li {
+    /* 2번 */
+    margin-top: 10px;
+}
+
+.lists li:hover {
+    box-shadow: inset 0 0 10px 2px #ddd;
+}
+
+/*
+    active
+    on
+    selected
+    highlight
+    done
+*/
+
+.lists li.active {
+    border-color: dodgerblue;
+    color: dodgerblue;
+}
+
+
