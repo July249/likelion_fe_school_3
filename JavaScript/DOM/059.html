@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML</title>
+  </head>
+
+  <body>
+    <p></p>
+    <script>
+      const txt = document.querySelector('p');
+      /* 1번 */
+      const name = 'john';
+      txt.innerHTML = name;
+      /* 2번 */
+      const name2 =
+        '<script>alert(`I am John in an annoying alert!`)<\/script>';
+      txt.innerHTML = name2;
+      //  HTML5 는 innerHTML 과 함께 삽입된 <script> 태그가 실행되지 않도록 지정합니다.
+
+      const name3 = "<img src='x' onerror='alert(1)'>";
+      txt.innerHTML = name3; // shows the alert
+
+      // 따라서 일반 텍스트를 삽입 할 때는 innerHTML 을 사용하지 않는 것이 좋습니다.
+      // 대신 Node.textContent를 사용하십시오.
+      // 이것은 전달된 내용을 HTML로 파싱하지 않고 원시 텍스트(raw text)로 삽입합니다.
+    </script>
+  </body>
+</html>

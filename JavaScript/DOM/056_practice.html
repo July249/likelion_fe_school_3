@@ -1,0 +1,188 @@
+<!-- <!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Practice</title>
+    <style>
+      .wrapper {
+        width: 400px;
+        margin: 100px auto;
+      }
+
+      .colorBox {
+        width: 400px;
+        height: 400px;
+      }
+
+      .black {
+        background-color: black;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="colorBox black"></div>
+
+      <ul>
+        <li><button class="btn-red">빨강</button></li>
+        <li><button class="btn-yellow">노랑</button></li>
+        <li><button class="btn-green">초록</button></li>
+      </ul>
+    </div>
+    <script>
+      const box = document.querySelector('.colorBox');
+      const redBtn = document.querySelector('.btn-red');
+      const yellowBtn = document.querySelector('.btn-yellow');
+      const greenBtn = document.querySelector('.btn-green');
+
+      redBtn.addEventListener('click', () => {
+        if (
+          !box.classList.contains('red') &&
+          !box.classList.contains('yellow') &&
+          !box.classList.contains('green')
+        ) {
+          box.classList.add('red');
+        } else {
+          box.classList.remove('yellow');
+          box.classList.remove('green');
+          box.classList.add('red');
+        }
+      });
+
+      yellowBtn.addEventListener('click', () => {
+        if (
+          !box.classList.contains('red') &&
+          !box.classList.contains('yellow') &&
+          !box.classList.contains('green')
+        ) {
+          box.classList.add('yellow');
+        } else {
+          box.classList.remove('red');
+          box.classList.remove('green');
+          box.classList.add('yellow');
+        }
+      });
+
+      greenBtn.addEventListener('click', () => {
+        if (
+          !box.classList.contains('red') &&
+          !box.classList.contains('yellow') &&
+          !box.classList.contains('green')
+        ) {
+          box.classList.add('green');
+        } else {
+          box.classList.remove('red');
+          box.classList.remove('yellow');
+          box.classList.add('green');
+        }
+      });
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .canvas {
+        width: 500px;
+        height: 500px;
+        background-color: black;
+        margin: 0 auto;
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .canvas.red {
+        background-color: red;
+      }
+
+      .canvas.yellow {
+        background-color: yellow;
+      }
+
+      .canvas.green {
+        background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="canvas"></div>
+    <ul>
+      <li>
+        <button type="button" class="btn-red">빨강</button>
+      </li>
+      <li>
+        <button type="button" class="btn-yellow">노랑</button>
+      </li>
+      <li>
+        <button type="button" class="btn-green">초록</button>
+      </li>
+    </ul>
+    <script>
+      const canvas = document.querySelector('.canvas');
+      const btnRed = document.querySelector('.btn-red');
+      const btnYellow = document.querySelector('.btn-yellow');
+      const btnGreen = document.querySelector('.btn-green');
+
+      const btnArr = [btnRed, btnYellow, btnGreen];
+
+      btnArr.forEach((item) => {
+        item.addEventListener('click', () => {
+          canvas.classList.remove('red', 'yellow', 'green');
+          if (item.classList.contains('btn-red')) {
+            canvas.classList.add('red');
+          } else if (item.classList.contains('btn-yellow')) {
+            canvas.classList.add('yellow');
+          } else if (item.classList.contains('btn-green')) {
+            canvas.classList.add('green');
+          }
+        });
+      });
+
+      /* btnRed.addEventListener('click', () => {
+        canvas.classList.remove('yellow', 'green');
+        canvas.classList.add('red');
+      })
+
+      btnYellow.addEventListener('click', () => {
+        canvas.classList.remove('red', 'green');
+        canvas.classList.add('yellow');
+      })
+
+      btnGreen.addEventListener('click', () => {
+        canvas.classList.remove('red', 'yellow');
+        canvas.classList.add('green');
+      }) */
+    </script>
+  </body>
+</html>

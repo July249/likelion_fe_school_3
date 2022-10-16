@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>insertAdjacentHTML</title>
+  </head>
+
+  <body>
+    <strong class="sayHi"> 반갑습니다. </strong>
+    <script>
+      // https://developer.mozilla.org/ko/docs/Web/API/Element/insertAdjacentHTML
+      /* 
+      특정 위치에 DOM tree 안에 원하는 node들을 추가 한다. 
+      이미 사용중인 element 는 다시 파싱하지 않는다. 
+      그러므로 element 안에 존재하는 element를 건드리지 않는다(innerHtml과는 좀 다름). 
+      innerHtml보다 작업이 덜 드므로 빠르다.
+
+      element.insertAdjacentHTML(position, text);
+
+      position은 아래 있는 단어만 사용 가능하다.
+
+      'beforebegin' : element 앞에
+      'afterbegin'  : element 안에 가장 첫번째 child
+      'beforeend' : element 안에 가장 마지막 child
+      'afterend'  : element 뒤에
+
+      text(인자)는 HTML 또는 XML로 해석될 수 있는 문자열이고(html code), (DOM) tree에 삽입할 수 있다.
+      */
+
+      const sayHi = document.querySelector('.sayHi');
+      sayHi.insertAdjacentHTML('beforebegin', '<span>안녕하세요 저는</span>');
+      sayHi.insertAdjacentHTML('afterbegin', '<span>재현입니다</span>');
+      sayHi.insertAdjacentHTML('beforeend', '<span>면접오시면</span>');
+      sayHi.insertAdjacentHTML('afterend', '<span>치킨사드릴게요</span>');
+    </script>
+  </body>
+</html>

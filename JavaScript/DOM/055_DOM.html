@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      .sky-blue {
+        background-color: skyblue;
+      }
+      .colorful_div {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="myDiv">div 입니다!</div>
+    <div>div 입니다!</div>
+    <div>div 입니다!</div>
+    <div>div 입니다!</div>
+    <div>div 입니다!</div>
+    <div class="colorful_div">div1 입니다!</div>
+    <div class="colorful_div">div2 입니다!</div>
+    <div class="colorful_div">div3 입니다!</div>
+    <div class="colorful_div">div4 입니다!</div>
+    <div class="colorful_div">div5 입니다!</div>
+
+    <!-- <article id="container">
+      점심식단
+      <ul>
+        <li>탕수육</li>
+        <li class="item-second">유산슬</li>
+        <li>짜장면</li>
+      </ul>
+    </article>
+
+    저녁 식단
+    <article>
+      <ul>
+        <li>된장국</li>
+        <li class="item-second">김치찌게</li>
+        <li>해장국</li>
+      </ul>
+    </article> -->
+    <button>HELLO!</button>
+    <script>
+      // 해당하는 Id를 가진 요소에 접근하기
+      // console.log(document.getElementById('myDiv'));
+
+      // const myDiv = document.getElementById('myDiv');
+
+      // 해당하는 모든 요소에 접근하기
+      // const div = document.getElementsByTagName('div');
+      // console.log(div);
+      // 해당하는 클래스를 가진 모든 요소에 접근하기
+      // const colorfulDivs = document.getElementsByClassName('colorful_div');
+      // console.log(colorfulDiv);
+
+      // css 선택자로 단일 요소에 접근하기
+      //document.querySelector('selector');
+
+      // css 선택자로 여러 요소에 접근하기
+      //document.querySelectorAll('selector');
+
+      /* const container = document.getElementById('container');
+      console.log(container);
+
+      const listItem = document.getElementsByTagName('li');
+      console.log(listItem[0].innerHTML);
+      console.log(listItem[1].innerHTML); */
+
+      /* HomeWork */
+      /*
+      Difference between NodeList and HTMLCollection
+
+      1. HTML Collection
+
+      2. NodeList
+
+      */
+      let colorfulDivs = document.querySelector('.colorful_div');
+      // 이벤트 삽입
+      const greetingBtn = document.querySelector('button');
+      /* console.log(colorfulDivs.classList.contains('sky-blue')); */
+      greetingBtn.addEventListener('click', () => {
+        // alert('안녕하세요!');
+        colorfulDivs.classList.add('sky-blue');
+      });
+      /* function colorControl(parm) {
+        // 클래스 제어
+        // greetingBtn.classList.remove('colorful_div');
+        // greetingBtn.classList.add('sky-blue');
+        // colorfulDivs.classList.remove('colorful_div');
+        // return parm
+      } */
+    </script>
+  </body>
+</html>
