@@ -14,6 +14,7 @@ try {
 try {
   let x = 10;
   let y = 20;
+  console.log(x + y + z);
 } catch (errMsg) {
 } finally {
 }
