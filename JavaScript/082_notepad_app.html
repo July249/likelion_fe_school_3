@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notepad App</title>
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        margin: 50px auto;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        padding: 10px 0;
+      }
+
+      .save {
+        margin-top: 10px;
+      }
+
+      section {
+        margin-top: 30px;
+      }
+
+      #memo-container {
+        margin: 0;
+        padding: 0;
+      }
+
+      .memo-item {
+        position: relative;
+        width: 400px;
+        background-color: red;
+      }
+
+      .delete {
+        position: absolute;
+        top: 50%;
+        right: 2%;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form>
+        <label for="subject">제목:</label>
+        <input
+          type="text"
+          id="subject"
+          required
+          placeholder="제목을 입력하세요"
+        />
+        <label for="content">내용:</label>
+        <textarea
+          name="content"
+          id="content"
+          cols="30"
+          rows="10"
+          required
+          placeholder="메모를 작성하여 주세요"
+        ></textarea>
+        <button class="save" type="submit">저장하기</button>
+      </form>
+      <section>
+        <ol id="memo-container">
+          <!-- <li id="1" class="memo-item">
+            날짜: <span class="date"></span><br />
+            제목: <span class="title"></span><br />
+            내용: <span class="text"></span>
+            <button class="delete" type="button">삭제</button>
+          </li> -->
+        </ol>
+      </section>
+    </main>
+    <script>
+      const subject = document.querySelector('#subject');
+      const content = document.querySelector('#content');
+      const saveBtn = document.querySelector('button');
+      const $ol = document.querySelector('#memo-container');
+
+      const storagedData = [JSON.parse(localStorage.getItem('memo'))] || [];
+
+      onRender();
+
+      /* Create */
+      function onAdd() {
+        const oldListArr = [...storagedData] || [];
+        console.log(oldListArr);
+        const memo = {
+          id: '',
+          createdDate: '',
+          title: '',
+          content: '',
+        };
+
+        const date = new Date();
+
+        memo['id'] = storagedData.length || 1;
+        memo['createdDate'] = date;
+        memo['title'] = subject.value;
+        memo['content'] = content.value;
+        console.log(memo);
+
+        const newListArr = oldListArr.push(memo);
+        console.log(newListArr);
+        const renderData =
+          localStorage.setItem('memo', JSON.stringify(newListArr)) || 'no data';
+        return renderData;
+      }
+
+      /* Read */
+      function onRender() {
+        const listArr = [...storagedData];
+        if (listArr[0] === null) {
+          const $p = document.createElement('p');
+          $p.innerHTML = 'No Data, yet!<br/> Create your memo on this app!';
+          $p.style.textAlign = 'center';
+          $ol.appendChild($p);
+        } else if (listArr[0] !== null) {
+          listArr.forEach((memo, idx) => {
+            const $li = document.createElement('li');
+            $li.id = idx + 1;
+            $li.classList.add('.memo-item');
+            $li.innerHTML = `날짜: <span class="date">${memo[
+              'createdDate'
+            ].slice(0, 10)}</span><br />
+              제목: <span class="title">${memo['title']}</span><br />
+              내용: <span class="text">${memo['content']}</span>
+              <button class="delete" type="button">삭제</button>`;
+            $ol.appendChild($li);
+          });
+        }
+      }
+
+      /* Update */
+
+      /* Delete */
+
+      saveBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (!subject.value || !content.value) {
+          if (!subject.value) {
+            alert('제목을 입력하여 주세요.');
+          }
+          if (!content.value) alert('메모할 내용을 입력하여 주세요');
+        } else {
+          onAdd();
+          onRender();
+
+          /* text format initialization */
+          subject.value = '';
+          content.value = '';
+        }
+      });
+    </script>
+  </body>
+</html>
