@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>화살표 함수에서의 이벤트</title>
+  </head>
+
+  <body>
+    <button>버튼</button>
+    <script>
+      const btn = document.querySelector('button');
+
+      const myObj = {
+        name: 'test',
+        test() {
+          btn.addEventListener('click', (event) => {
+            console.log(this); // {name: 'test', test: ƒ}
+            console.log(this.name);
+          });
+          btn.addEventListener('click', function (event) {
+            console.log(`function ${this}`); // {name: 'test', test: ƒ}
+            console.log(this.name);
+          });
+        },
+      };
+
+      myObj.test();
+    </script>
+  </body>
+</html>

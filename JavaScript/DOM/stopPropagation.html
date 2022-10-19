@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stopPropagation</title>
+  </head>
+
+  <body>
+    <form action="">
+      <button type="submit" class="submit">제출</button>
+    </form>
+
+    <script>
+      const submit = document.querySelector('.submit');
+      submit.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        console.log('clicked');
+      });
+
+      document.body.addEventListener(
+        'click',
+        () => {
+          console.log('event still alive!');
+        },
+        true // true: event capturing on >> 캡처링 이벤트가 먼저 발생하기 때문에 먼저 콘솔에 출력된다
+      );
+    </script>
+  </body>
+</html>

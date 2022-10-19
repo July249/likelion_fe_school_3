@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+
+  <body>
+    <article class="parent">
+      <ol>
+        <li><button class="btn-first" type="button">버튼1</button></li>
+        <li><button type="button">버튼2</button></li>
+        <li><button type="button">버튼3</button></li>
+      </ol>
+    </article>
+
+    <script>
+      let parent = document.querySelector('.parent');
+      parent.addEventListener('click', function (event) {
+        console.log(`익명함수 선언문 this: ${this}`);
+        console.log(`익명함수 선언문currentTarget: ${event.currentTarget}`);
+      });
+      parent = document.querySelector('.parent');
+      parent.addEventListener('click', (event) => {
+        console.log(`화살표 this: ${this}`); // 최상위 객체인 window가 출력된다. >> 외부 렉시컬 환경을 참조
+        console.log(`화살표 currentTarget: ${event.currentTarget}`);
+      });
+    </script>
+  </body>
+</html>

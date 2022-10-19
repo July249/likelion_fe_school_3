@@ -36,15 +36,15 @@
 
       .memo-item {
         position: relative;
-        width: 400px;
-        background-color: red;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        border: 1px solid black;
+        padding: 10px;
       }
 
       .delete {
-        position: absolute;
-        top: 50%;
-        right: 2%;
-        transform: translateY(-50%);
+        margin-top: 10px;
       }
     </style>
   </head>
@@ -60,7 +60,6 @@
         />
         <label for="content">내용:</label>
         <textarea
-          name="content"
           id="content"
           cols="30"
           rows="10"
@@ -70,14 +69,7 @@
         <button class="save" type="submit">저장하기</button>
       </form>
       <section>
-        <ol id="memo-container">
-          <!-- <li id="1" class="memo-item">
-            날짜: <span class="date"></span><br />
-            제목: <span class="title"></span><br />
-            내용: <span class="text"></span>
-            <button class="delete" type="button">삭제</button>
-          </li> -->
-        </ol>
+        <ol id="memo-container"></ol>
       </section>
     </main>
     <script>
@@ -86,52 +78,57 @@
       const saveBtn = document.querySelector('button');
       const $ol = document.querySelector('#memo-container');
 
-      const storagedData = [JSON.parse(localStorage.getItem('memo'))] || [];
-
-      onRender();
+      const storagedData = JSON.parse(localStorage.getItem('memo')) || [];
+      console.log(...storagedData);
 
       /* Create */
       function onAdd() {
-        const oldListArr = [...storagedData] || [];
-        console.log(oldListArr);
-        const memo = {
-          id: '',
-          createdDate: '',
-          title: '',
-          content: '',
-        };
+        const titleTxt = subject.value;
+        const contentTxt = content.value;
 
-        const date = new Date();
+        const newMemo = onCreateItem(titleTxt, contentTxt);
 
-        memo['id'] = storagedData.length || 1;
-        memo['createdDate'] = date;
-        memo['title'] = subject.value;
-        memo['content'] = content.value;
-        console.log(memo);
+        $ol.appendChild(newMemo);
 
-        const newListArr = oldListArr.push(memo);
-        console.log(newListArr);
-        const renderData =
-          localStorage.setItem('memo', JSON.stringify(newListArr)) || 'no data';
-        return renderData;
+        let memoArr = [];
+
+        onCreateItem();
       }
 
       /* Read */
-      function onRender() {
-        const listArr = [...storagedData];
-        if (listArr[0] === null) {
+      function onCreateItem() {
+        if (storagedData[0] === undefined) {
           const $p = document.createElement('p');
-          $p.innerHTML = 'No Data, yet!<br/> Create your memo on this app!';
+          $p.innerHTML = 'No Data, yet!<br/> Create new memo, just for you!';
           $p.style.textAlign = 'center';
           $ol.appendChild($p);
-        } else if (listArr[0] !== null) {
-          listArr.forEach((memo, idx) => {
+        } else if (storagedData[0] !== undefined) {
+          const memo = {
+            id: '',
+            createdDate: '',
+            title: '',
+            content: '',
+          };
+
+          const date = new Date();
+
+          memo['id'] = storagedData.length > 0 ? storagedData.length : 1;
+          memo['createdDate'] = date.toISOString().slice(0, 10);
+          memo['title'] = subject.value;
+          memo['content'] = content.value;
+          memoArr.push(memo);
+          console.log(memoArr);
+
+          const renderData = localStorage.setItem(
+            'memo',
+            JSON.stringify(memoArr)
+          );
+
+          storagedData.forEach((memo, idx) => {
             const $li = document.createElement('li');
             $li.id = idx + 1;
-            $li.classList.add('.memo-item');
-            $li.innerHTML = `날짜: <span class="date">${memo[
-              'createdDate'
-            ].slice(0, 10)}</span><br />
+            $li.classList.add('memo-item');
+            $li.innerHTML = `날짜: <span class="date">${memo['createdDate']}</span><br />
               제목: <span class="title">${memo['title']}</span><br />
               내용: <span class="text">${memo['content']}</span>
               <button class="delete" type="button">삭제</button>`;
@@ -154,7 +151,6 @@
           if (!content.value) alert('메모할 내용을 입력하여 주세요');
         } else {
           onAdd();
-          onRender();
 
           /* text format initialization */
           subject.value = '';

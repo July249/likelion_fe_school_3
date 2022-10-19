@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stopPropagation 연습</title>
+  </head>
+
+  <body>
+    <h1>나의 todo list</h1>
+    <p>
+      1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">
+        삭제
+      </button>
+    </p>
+    <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p>
+      3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">
+        삭제
+      </button>
+    </p>
+    <p>4. 잠자기 전에 약먹기<button type="button">삭제</button></p>
+    <p>5. 커피 한잔만 마시기<button type="button">삭제</button></p>
+    <p>6. 아침에 나를 칭찬해주기<button type="button">삭제</button></p>
+  </body>
+  <script>
+    // const $p = document.querySelector('p');
+    // const $btn = document.querySelector('button');
+    // /* 텍스트 클릭시 텍스트 내용이 alert로 나타남 */
+    // $p.addEventListener('click', (event) => {
+    //   const target = event.currentTarget;
+    //   const targetMsg = target.innerText
+    //     .split('')
+    //     .slice(0, target.innerText.length - 2)
+    //     .join('');
+    //   alert(targetMsg);
+    // });
+    // /* 삭제 버튼 클릭시 삭제하시겠는지 확인창이 뜨고, 확인버튼을 누르면 p태그 삭제 */
+    // $btn.addEventListener('click', function (event) {
+    //   const target = event.currentTarget;
+    //   const alertOn = !!target;
+    //   if (alertOn) {
+    //     confirm('삭제하시겠습니까?');
+    //   }
+    //   event.stopPropagation();
+    // });
+
+    const txts = document.querySelectorAll('p');
+    const btns = document.querySelectorAll('button');
+
+    // IE에서 for of 작성 불가
+    /* for (const item of txts) {
+      item.addEventListener('click', (e) => {
+        alert(e.target.innerText.slice(0, -2));
+      });
+    } */
+
+    // txts => 노드리스트 => 노드리스트를 위한 forEach문이 따로 있음 (IE 지원 X)
+    /* txts.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        alert(e.target.innerText.slice(0, -2));
+      });
+    }); */
+
+    // IE 대응
+    // - Array.prototype의 forEach() 메서드를 call()을 이용해서 this가 txts를 가리키게 설정
+    Array.prototype.forEach.call(txts, (item) => {
+      item.addEventListener('click', (e) => {
+        alert(e.target.innerText.slice(0, -2));
+      });
+    });
+
+    for (const item of btns) {
+      item.addEventListener('click', (e) => {
+        const result = confirm('삭제하시겠습니까?');
+        // event bubbling 차단
+        e.stopPropagation();
+        if (result) {
+          item.parentElement.remove();
+        }
+      });
+    }
+
+    /* 
+    cf)
+    - 상위요소에서 stopPropagation() - > 이벤트 캡처링을 막음.
+    - 하위요소에서 stopPropagation() - > 이벤트 버블링을 막음. 
+    */
+  </script>
+</html>
