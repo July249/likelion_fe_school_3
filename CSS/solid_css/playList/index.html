@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="normalize.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>플레이 리스트</title>
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1084.0" data-gr-ext-installed="">
+    <article id="app">
+      <h2 class="text-hidden">플레이 리스트</h2>
+      <ul
+        class="list-item"
+        style="transform: translate(-50%, -50%) rotateY(-51.4286deg)"
+      >
+        <li style="transform: rotateY(0deg) translateZ(445.86px)">
+          <iframe
+            id="player0"
+            frameborder="0"
+            allowfullscreen="1"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="[MV] 검정치마(The Black Skirts) - 'EVERYTHING'"
+            width="400"
+            height="360"
+            src="https://www.youtube.com/embed/Aq_gsctWHtQ?autoplay=0&amp;controls=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fseminseminsemin.github.io&amp;widgetid=1"
+          ></iframe>
+        </li>
+        <li style="transform: rotateY(51.4286deg) translateZ(445.86px)">
+          <iframe
+            id="player1"
+            frameborder="0"
+            allowfullscreen="1"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="소녀 A Little Girl"
+            width="400"
+            height="360"
+            src="https://www.youtube.com/embed/PfpERIQXIrk?autoplay=0&amp;controls=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fseminseminsemin.github.io&amp;widgetid=2"
+          ></iframe>
+        </li>
+        <li style="transform: rotateY(102.857deg) translateZ(445.86px)">
+          <iframe
+            id="player2"
+            frameborder="0"
+            allowfullscreen="1"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="4 Walls (English Original Demo) - f(x) ~ LYRICS"
+            width="400"
+            height="360"
+            src="https://www.youtube.com/embed/vFuU4rIZZ30?autoplay=0&amp;controls=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fseminseminsemin.github.io&amp;widgetid=3"
+          ></iframe>
+        </li>
+        <li style="transform: rotateY(154.286deg) translateZ(445.86px)">
+          <iframe
+            id="player3"
+            frameborder="0"
+            allowfullscreen="1"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="TOMBOY"
+            width="400"
+            height="360"
+            src="https://www.youtube.com/embed/zC8RrOA0spo?autoplay=0&amp;controls=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fseminseminsemin.github.io&amp;widgetid=4"
+          ></iframe>
+        </li>
+        <li style="transform: rotateY(205.714deg) translateZ(445.86px)">
+          <iframe
+            id="player4"
+            frameborder="0"
+            allowfullscreen="1"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="가끔 - 백예린 (Yerin Baek) (original.Crush) ✨ 내가 얼마나 좋아했는지"
+            width="400"
+            height="360"
+            src="https://www.youtube.com/embed/hoknJbAsOZY?autoplay=0&amp;controls=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fseminseminsemin.github.io&amp;widgetid=5"
+          ></iframe>
+        </li>
+        <li style="transform: rotateY(257.143deg) translateZ(445.86px)">
+          <iframe
+            id="player5"
+            frameborder="0"
+            allowfullscreen="1"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="[MV] CODE KUNST - PARACHUTE (Feat. OH HYUK &amp; DOK2)"
+            width="400"
+            height="360"
+            src="https://www.youtube.com/embed/ty8fr7vmedg?autoplay=0&amp;controls=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fseminseminsemin.github.io&amp;widgetid=6"
+          ></iframe>
+        </li>
+        <li style="transform: rotateY(308.571deg) translateZ(445.86px)">
+          <iframe
+            id="player6"
+            frameborder="0"
+            allowfullscreen="1"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="Quizas, Quizas, Quizas"
+            width="400"
+            height="360"
+            src="https://www.youtube.com/embed/DJ4Zda11iSo?autoplay=0&amp;controls=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fseminseminsemin.github.io&amp;widgetid=7"
+          ></iframe>
+        </li>
+      </ul>
+    </article>
+    <script
+      type="text/javascript"
+      id="www-widgetapi-script"
+      src="https://www.youtube.com/s/player/a25d4acf/www-widgetapi.vflset/www-widgetapi.js"
+      async=""
+    ></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      // 비디오 데이터
+      function Players(playerName, videoId, $startSeconds, $endSeconds) {
+        this.playerName = playerName;
+        this.$videoId = videoId;
+        this.$startSeconds = $startSeconds;
+        this.$endSeconds = $endSeconds;
+      }
+
+      const videoInfoData = [
+        new Players('player0', 'Aq_gsctWHtQ', 55, 86),
+        new Players('player1', 'PfpERIQXIrk', 74, 103),
+        new Players('player2', 'vFuU4rIZZ30', 44, 60),
+        new Players('player3', 'zC8RrOA0spo', 65, 104),
+        new Players('player4', 'hoknJbAsOZY', 65, 87),
+        new Players('player5', 'ty8fr7vmedg', 72, 101),
+        new Players('player6', 'DJ4Zda11iSo', 52, 100),
+      ];
+
+      const listUl = document.querySelector('.list-item');
+
+      videoInfoData.forEach((i) => {
+        const li = document.createElement('li');
+        const videoArea = document.createElement('div');
+        videoArea.id = i.playerName;
+        li.appendChild(videoArea);
+        listUl.appendChild(li);
+      });
+
+      const liItems = document.querySelectorAll('.list-item li');
+
+      const radius = (liItems[0].offsetWidth * liItems.length) / 3.14 / 2;
+
+      liItems.forEach((item, index) => {
+        item.style.transform = `rotateY(${
+          (360 / liItems.length) * index
+        }deg) translateZ(${radius}px)`;
+      });
+
+      // 휠 변수
+      const center = document.querySelector('.list-item');
+      const items = center.querySelectorAll('li');
+      const angle = 360 / items.length;
+      let currAngle = 0;
+
+      // API 불러오기
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 비디오 삽입
+      const playerList = [];
+
+      function onYouTubeIframeAPIReady() {
+        for (let i = 0; i < videoInfoData.length; i++) {
+          const nowVideo = videoInfoData[i];
+          let done = false;
+          playerList.push(
+            new YT.Player(nowVideo.playerName, {
+              videoId: nowVideo.$videoId,
+              width: '400',
+              height: '360',
+              playerVars: { autoplay: 0, controls: 0 },
+              events: {
+                onReady: function onReady(event) {
+                  event.target.cueVideoById({
+                    videoId: nowVideo.$videoId,
+                    startSeconds: nowVideo.$startSeconds,
+                    endSeconds: nowVideo.$endSeconds,
+                  });
+                },
+                onStateChange: function onStateChange(event) {
+                  if (event.data == 0) {
+                    currAngle -= angle;
+
+                    center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+                    event.target.seekTo(nowVideo.$startSeconds);
+                    event.target.pauseVideo();
+                  }
+                },
+              },
+            })
+          );
+        }
+        // 자동재생 문제
+        const iframes = document.querySelectorAll('iframe');
+        for (let iframe of iframes) {
+          iframe.setAttribute(
+            'allow',
+            'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          );
+        }
+      }
+
+      // 휠 돌아가게
+      document.addEventListener('click', function (event) {
+        if (window.innerWidth / 2 < event.clientX) {
+          playerList.map((i) => i.pauseVideo());
+          currAngle -= angle;
+          center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+        } else {
+          playerList.map((i) => i.pauseVideo());
+          // const nowCurrAngle = currAngle;
+          currAngle += angle;
+          center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+        }
+      });
+    </script>
+  </body>
+</html>

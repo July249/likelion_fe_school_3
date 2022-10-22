@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+#app {
+  /* 화면을 가득 채우게 하기 */
+  width: 100vw;
+  height: 100vh;
+  perspective: 1600px;
+}
+
+.list-item {
+  position: fixed;
+  width: 340px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(100deg);
+  transform-style: preserve-3d;
+}
+
+.list-item li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 따로 backface-visibility 설정을 하지 않으면 앞면의 좌우 대칭 모습만 나타남 */
+  /* 뒷면의 이미지가 있는 경우 layer를 구분하여 나타낼 수 있게 됨 */
+  backface-visibility: hidden;
+}
+
+.list-item li img {
+  /* object-fit: contain; => 이미지가 잘리자 않는 한도 내에서 최대한의 크기 */
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.list-item li:nth-child(1) {
+  transform: rotateY(0) translateZ(calc(340px * 7 / 3.14 / 2));
+}
+.list-item li:nth-child(2) {
+  transform: rotateY(calc(360deg / 7 * 1))
+    translateZ(calc(340px * 7 / 3.14 / 2));
+}
+.list-item li:nth-child(3) {
+  transform: rotateY(calc(360deg / 7 * 2))
+    translateZ(calc(340px * 7 / 3.14 / 2));
+}
+.list-item li:nth-child(4) {
+  transform: rotateY(calc(360deg / 7 * 3))
+    translateZ(calc(340px * 7 / 3.14 / 2));
+}
+.list-item li:nth-child(5) {
+  transform: rotateY(calc(360deg / 7 * 4))
+    translateZ(calc(340px * 7 / 3.14 / 2));
+}
+.list-item li:nth-child(6) {
+  transform: rotateY(calc(360deg / 7 * 5))
+    translateZ(calc(340px * 7 / 3.14 / 2));
+}
+.list-item li:nth-child(7) {
+  transform: rotateY(calc(360deg / 7 * 6))
+    translateZ(calc(340px * 7 / 3.14 / 2));
+}
