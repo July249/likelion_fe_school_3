@@ -12,7 +12,7 @@ const dbConfig = require('../config/dbConfig.json');
  * Get port from environment and store in Express.
  */
 const mongoose = require('mongoose');
-const db = mongoose.connect;
+const db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', () => {
   console.log('Connected to mongodb server!!');
