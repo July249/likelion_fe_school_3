@@ -6,8 +6,20 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const templateRouter = require('./routes/template');
+
+/* express session */
+const session = require('express-session');
 
 var app = express();
+
+app.use(
+  session({
+    secret: 'hello world',
+    resave: false, // session이 변경되지 않으면 저장하지 않도록 설정
+    saveUninitialized: true,
+  })
+);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/template', templateRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
