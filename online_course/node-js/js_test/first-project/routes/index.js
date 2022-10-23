@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* CRUD */
 const postModel = require('../model/post');
-
+/* Create */
 router.post('/', async (req, res) => {
   const { title, content } = req.body;
   const post = new postModel({
@@ -17,6 +17,75 @@ router.post('/', async (req, res) => {
     res.status(200).json({
       message: 'upload success',
       data: result,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error,
+    });
+  }
+});
+/* Read */
+router.get('/', async (req, res) => {
+  try {
+    const result = await postModel.find({}); // 전체 게시물을 가져오기 위함이므로 조건을 작성하지 않는다.
+    res.status(200).json({
+      message: 'read success',
+      data: result,
+    });
+  } catch (error) {
+    res.state(500).json({
+      message: error,
+    });
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await postModel.findById(id); // 특정 게시물을 가져오기 위해 id를 조회한다
+    res.status(200).json({
+      message: 'detail ssuccess',
+      data: result,
+    });
+  } catch (error) {
+    res.state(500).json({
+      message: error,
+    });
+  }
+});
+
+/* Update */
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const { title, content } = req.body;
+  try {
+    const result = await postModel.findByIdAndUpdate(
+      id,
+      {
+        title: title,
+        content: content,
+      },
+      {
+        new: true, // result 초기화
+      }
+    );
+    res.status(200).json({
+      message: 'update success',
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error,
+    });
+  }
+});
+
+/* Delete */
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    await postModel.findByIdAndDelete(id);
+    res.status(200).json({
+      message: 'delete success',
     });
   } catch (error) {
     res.status(500).json({
