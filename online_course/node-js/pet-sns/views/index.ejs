@@ -139,27 +139,6 @@
           });
         }
       });
-
-      $(() => {
-        // 클론 후에 해당 코드의 주석을 풀어주세요~!!
-        // const name = "<%= isAuthenticated.username %>";
-
-        const socket = io();
-
-        $('#chat_form').submit(() => {
-          socket.emit('chat-msg', name, $('.chat_input').val());
-          $('.chat_input').val('');
-          return false;
-        });
-
-        socket.on('chat-msg', (name, msg) => {
-          let chat = `<div class="chat_block">
-          <span style="font-weight: bolder">${name}</span> :
-            ${msg}
-          </div>`;
-          $('.chat_content').append(chat);
-        });
-      });
     </script>
   </body>
 </html>
