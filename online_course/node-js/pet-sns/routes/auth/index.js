@@ -1,14 +1,21 @@
 const express = require('express');
 const router = express.Router();
+// const authController = require("../../controller/authController");
 
-// /auth/login 로 접근
+// router.post("/register", authController.register);
+// router.post("/login", authController.login);
+
 router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// /auth/register 로 접근
 router.get('/register', (req, res) => {
   res.render('register');
 });
 
-module.export = router;
+// router.post("/logout", (req, res) => {
+//   res.clearCookie("access_token");
+//   res.redirect("/");
+// });
+
+module.exports = router;

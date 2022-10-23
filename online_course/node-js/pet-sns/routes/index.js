@@ -1,8 +1,10 @@
 var express = require('express');
-var router = express.Router();
+const router = express.Router();
 const authRouter = require('./auth');
 const postRouter = require('./posts');
+// const postController = require('../controller/postController');
 
+// router.get('/', postController.list);
 router.get('/', (req, res) => {
   res.render('index', { postList: [] });
 });
