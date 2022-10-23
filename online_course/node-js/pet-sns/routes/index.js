@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-// auth 폴더 내의 index.ejs 파일을 연결
 const authRouter = require('./auth');
 const postRouter = require('./posts');
 
@@ -9,6 +8,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/auth', authRouter);
-router.use('/post', postRouter);
+router.use('/posts', postRouter);
 
 module.exports = router;
