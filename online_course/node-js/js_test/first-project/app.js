@@ -19,6 +19,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 어떠한 요청에도 무조건 중간에 한번은 동작이 되도록 작성
+// app.use((req, res, next) => {
+//   console.log('middle ware');
+//   next();
+// });
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
