@@ -37,4 +37,19 @@ router.get('/login/:username/:password', (req, res) => {
   }
 });
 
+router.get('/logout', (req, res) => {
+  const session = req.session;
+  if (session.username) {
+    req.session.destroy((err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect('/users');
+      }
+    });
+  } else {
+    res.redirect('/users');
+  }
+});
+
 module.exports = router;
