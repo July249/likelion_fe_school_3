@@ -1,7 +1,32 @@
 var express = require('express');
 var router = express.Router();
-const loginCheck = require('../module/loginCheck');
-const upload = require('../module/imageUpload');
+
+/* CRUD */
+const postModel = require('../model/post');
+
+router.post('/', async (req, res) => {
+  const { title, content } = req.body;
+  const post = new postModel({
+    title: title,
+    content: content,
+  });
+  try {
+    const result = await post.save();
+    // save() 함수는 비동기로 움직이기 때문에 문제가 발생할 수 있다. 왜? 언제 끝나는지 몰라서...
+    // 따라서 async-await 문법을 사용해야 한다.
+    res.status(200).json({
+      message: 'upload success',
+      data: result,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error,
+    });
+  }
+});
+
+// const loginCheck = require('../module/loginCheck');
+// const upload = require('../module/imageUpload');
 
 /* loginCheck - Middleware */
 // const loginCheck = (req, res, next) => {
@@ -15,19 +40,19 @@ const upload = require('../module/imageUpload');
 //   }
 // };
 
-router.get('/', loginCheck, (req, res) => {
-  res.status(200).json({
-    message: 'login success!',
-  });
-});
+// router.get('/', loginCheck, (req, res) => {
+//   res.status(200).json({
+//     message: 'login success!',
+//   });
+// });
 
-router.post('/upload', upload.single('image'), (req, res) => {
-  const file = req.file;
-  console.log(file);
-  res.status(200).json({
-    message: 'upload success!',
-  });
-});
+// router.post('/upload', upload.single('image'), (req, res) => {
+//   const file = req.file;
+//   console.log(file);
+//   res.status(200).json({
+//     message: 'upload success!',
+//   });
+// });
 
 /* HTTP Method */
 // let arr = [];
