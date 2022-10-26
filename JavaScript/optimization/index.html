@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>requestAnimationFrame</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: limegreen;
+        /* transition: 0.1s; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+    <script>
+      /* const box = document.querySelector('div');
+      let posx = box.style.left;
+      window.addEventListener('keyup', (e) => {
+        if (e.keyCode == 39) {
+          rightPressed = true;
+          console.log(`right: ${rightPressed}`);
+          if (posx <= screenX) {
+            posx++;
+          }
+        } else if (e.keyCode == 37) {
+          leftPressed = true;
+          console.log(`left: ${leftPressed}`);
+          if (posx >= 0) {
+            posx--;
+          }
+          console.log('Press right button');
+        }
+        console.log(posx);
+        box.style.left = `${posx}px`;
+        // return posx;
+      }); */
+
+      /*
+      const target = document.querySelector('div');
+      let posx = 0;
+      
+      document.addEventListener('keydown', move);
+
+      function move(event) {
+        const keyName = event.key;
+        let maxX = window.innerWidth - target.style.width;
+        if (keyName === 'ArrowRight') {
+          if (posx <= maxX) {
+            posx += 5;
+            target.style.transform = `translateX(${posx}px)`;
+          }
+        }
+        if (keyName === 'ArrowLeft') {
+          if (posx >= 0) {
+            posx -= 5;
+            target.style.transform = `translateX(${posx}px)`;
+          }
+        }
+      } */
+
+      const target = document.querySelector('div');
+      let posx = 0;
+
+      let keys = {}; // 사용자가 누르는 키의 상태를 저장하는 객체
+
+      function move(event) {
+        keys[event.key] = true;
+      }
+
+      function stop(event) {
+        keys[event.key] = false;
+      }
+
+      document.addEventListener('keydown', move);
+      document.addEventListener('keyup', stop);
+
+      function play() {
+        // console.log('play!');
+
+        if (keys.ArrowRight) {
+          posx += 5;
+          target.style.transform = `translateX(${posx}px)`;
+        }
+
+        if (keys.ArrowLeft) {
+          posx -= 5;
+          target.style.transform = `translateX(${posx}px)`;
+        }
+
+        window.requestAnimationFrame(play); // 다른 브라우저화면으로 넘어가면 일시정지됨
+      }
+
+      window.requestAnimationFrame(play);
+      // 다른 브라우저화면으로 넘어가면 일시정지됨
+    </script>
+  </body>
+</html>

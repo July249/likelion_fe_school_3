@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.ir {
+  clip-path: inset(50%);
+  position: absolute;
+}

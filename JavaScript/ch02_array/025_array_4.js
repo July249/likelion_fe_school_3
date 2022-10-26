@@ -40,3 +40,8 @@ cafe
 // 다음 배열에서 물고기가 아닌 것을 슬라이스를 이용하여 콘솔로 출력하세요
 let fish = ['정어리', '고등어', '돌고래', '참치', '고래상어', '코끼리'];
 // console.log(fish.slice(2, 3) + ',' + fish.slice(5));
+
+let arr = [1, 2, 3, 4, 5, 6];
+console.log(arr.filter((val) => val > 3)); // [4, 5, 6]
+console.log(arr.map((val) => val > 3)); // [ false, false, false, true, true, true ]
+console.log(arr.forEach((val) => val > 3)); // undefined

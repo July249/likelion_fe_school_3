@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 스터디 모집 설문조사</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <form id="main__form">
+      <!-- block format context -->
+      <fieldset>
+        <!-- fieldset의 제목 역할, 항상 첫번째로 나와야함 -->
+        <legend>JS 스터디 모집 설문조사</legend>
+        <!-- 진행상황 => <progress></progress> 요소 이용 -->
+        <progress max="100" value="0" class="progress__bar"></progress>
+        <p class="msg__notice">설문지를 작성하세요!</p>
+
+        <label for="q1">질문1. 무엇을 가장 배우고 싶나요?</label>
+        <input type="text" id="q1" />
+
+        <label for="q2">질문2. 시간은 언제가 적당한가요?</label>
+        <input type="text" id="q2" />
+
+        <label for="q3">질문3. 몇 시간 정도 예상하세요?</label>
+        <input type="text" id="q3" />
+
+        <label for="q4">질문4. 난이도를 조정한다면?</label>
+        <input type="text" id="q4" />
+
+        <label for="q5">질문5. 끝으로 하고 싶은 말이 있나요?</label>
+        <input type="text" id="q5" />
+
+        <button type="submit">제출하기</button>
+        <button type="reset">초기화</button>
+      </fieldset>
+    </form>
+    <script>
+      const mainForm = document.querySelector('#main__form');
+      const progressBar = mainForm.querySelector('.progress__bar');
+      const message = mainForm.querySelector('.msg__notice');
+      const inputs = mainForm.querySelectorAll('input');
+      const resetBtn = mainForm.querySelector('button[type="reset"]');
+
+      mainForm.addEventListener('keyup', () => {
+        // 유효한 input의 갯수를 카운팅
+        // let validCounter = 0;
+        // inputs.forEach((item) => {
+        //   /* validity: 유효성을 검사한 결과를 살펴볼 수 있음 */
+        //   // console.log(item.validity);
+        //   if (item.value) {
+        //     if (item.validity.valid) {
+        //       validCounter++;
+        //     }
+        //   } else if (!item.value) {
+        //     item.validity.valid = false;
+        //   }
+        // });
+        // console.log(validCounter);
+
+        //   switch (validCounter) {
+        //     case 1:
+        //       message.textContent = '좋습니다! 계속 진행해주세요.';
+        //       progressBar.setAttribute('value', 20);
+        //       break;
+        //     case 2:
+        //       message.textContent = '좋은 답변이군요! 계속 진행해주세요.';
+        //       progressBar.setAttribute('value', 40);
+        //       break;
+        //     case 3:
+        //       message.textContent = '절반 이상을 지났습니다! 계속 진행해주세요.';
+        //       progressBar.setAttribute('value', 60);
+        //       break;
+        //     case 4:
+        //       message.textContent = '이제 하나 남았네요! 계속 진행해주세요.';
+        //       progressBar.setAttribute('value', 80);
+        //       break;
+        //     case 5:
+        //       message.textContent =
+        //         '설문을 완료하였습니다! 이제 제출하여 주세요.';
+        //       progressBar.setAttribute('value', 100);
+        //       break;
+        //     default:
+        //       message.textContent = '설문지를 작성하세요!';
+        //       progressBar.setAttribute('value', 0);
+        //   }
+        // });
+
+        // resetBtn.addEventListener('click', () => {
+        //   message.textContent = '설문지를 작성해주세요!';
+        //   progressBar.setAttribute('value', 0);
+        // });
+
+        // version 2
+        const result = [...inputs].filter((item) => {
+          if (item.value) {
+            return item.validity.valid;
+          } else {
+            return false;
+          }
+        });
+
+        switch (result.length) {
+          case 1:
+            message.textContent = '좋습니다! 계속 진행해주세요.';
+            progressBar.setAttribute('value', 20);
+            break;
+          case 2:
+            message.textContent = '좋은 답변이군요! 계속 진행해주세요.';
+            progressBar.setAttribute('value', 40);
+            break;
+          case 3:
+            message.textContent = '절반 이상을 지났습니다! 계속 진행해주세요.';
+            progressBar.setAttribute('value', 60);
+            break;
+          case 4:
+            message.textContent = '이제 하나 남았네요! 계속 진행해주세요.';
+            progressBar.setAttribute('value', 80);
+            break;
+          case 5:
+            message.textContent =
+              '설문을 완료하였습니다! 이제 제출하여 주세요.';
+            progressBar.setAttribute('value', 100);
+            break;
+          default:
+            message.textContent = '설문지를 작성하세요!';
+            progressBar.setAttribute('value', 0);
+        }
+      });
+
+      resetBtn.addEventListener('click', () => {
+        message.textContent = '설문지를 작성해주세요!';
+        progressBar.setAttribute('value', 0);
+      });
+    </script>
+  </body>
+</html>
