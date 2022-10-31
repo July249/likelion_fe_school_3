@@ -51,7 +51,8 @@
   - 주의! hgroup은 이론적으로만 유효합니다.(MDN 문서 참조: https://developer.mozilla.org/ko/docs/Web/HTML/Element/hgroup)
 - header
   - 콘텐츠의 시작 부분을 나타내는 요소(구역의 제목을 포함하는 용도로 많이 사용합니다.)
-  - h1 > a > img
+  - h1 > a > img (다음)
+  - h1 > a (네이버)  
   - h1(screen out) + img
 - footer
   - 작성자 정보, 저작권, 관련된 링크 등의 내용을 담는 구획
@@ -68,15 +69,32 @@
   - html이 공백 병합이 되는데 공백을 병합하고 싶지 않을 때 사용
 - blockquote
 - ol
+  - type 속성이 있습니다 (i I 1 a A)
+  - reversed 속성을 true로 넣으면 내림차순으로 변경됩니다
+  - start 속성을 이용하여 시작하는 숫자 번호를 지정할 수 있습니다
 - ul
+  - 메뉴로 많이 사용됩니다
 - menu
 - li
 - dl
+  - 정의 목록
+  - 보통 dl > div > dt > dd
+  - JSON 파일의 key와 value 쌍을 읽어올 때 사용
 - dt
+  - 정의할 용어
 - dd
+  - 용어 설명
 - figure
 - figcaption
+  - 이미지와 함께 콘텐츠의 캡션이 연결되도록 사용
+    ```html
+    <figure>
+      <img src="images/baby.jpg" alt="">
+      <figcaption>관심 받고 싶어하는 아기</figcaption>
+    </figure>
+    ```
 - main
+  - 
 - div
   - 최후의 수단으로 활용. 이상과 현실의 괴리가 있을 수 있습니다.
 
@@ -84,6 +102,7 @@
 
 - a
   - a 태그 내부에 block 요소 삽입 가능(HTML 5부터)
+  - html 문법상 sections, grouping content 요소들은 텍스트 레벨 요소의 자식으로 사용되지 않지만, 앵커 태그만 예외적으로 sections, grouping content 요소를 
 - em
 - strong
 - small
