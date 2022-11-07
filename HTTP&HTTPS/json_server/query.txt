@@ -1,0 +1,10 @@
+http://localhost:3001/product
+http://localhost:3001/product/0
+http://localhost:3001/product/1
+http://localhost:3001/product/2
+http://localhost:3001/product?_sort=id&_order=DESC
+http://localhost:3001/product?_sort=id&_order=ASC
+http://localhost:3001/product?id_gte=3
+http://localhost:3001/product?id_lte=5
+http://localhost:3001/product?_start=0&_end=5
+http://localhost:3001/product?_start=5&_end=10
