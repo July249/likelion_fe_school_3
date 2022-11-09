@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>리액트 1분만에 추가해보기!</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      function IntroduceMyself(props /* name, age, money, coffee */) {
+        return (
+          <div>
+            <p>제 이름은 {props.name}</p>
+            <p>제 나이는 {props.age}</p>
+            <p>제 통장은 {props.money}</p>
+            <p>저희 집은 {props.house}</p>
+            <p>커피는 {props.coffee}</p>
+          </div>
+        );
+      }
+
+      // 꼭 props가 아니여도 되어요~
+      function IntroduceMyself2(지형 /* name, age, money, coffee */) {
+        return (
+          <div>
+            <p>제 이름은 {지형.name}</p>
+            <p>제 나이는 {지형.age}</p>
+            <p>제 통장은 {지형.money}</p>
+            <p>저희 집은 {지형.house}</p>
+            <p>커피는 {지형.coffee}</p>
+          </div>
+        );
+      }
+
+      // js의 구조분해 할당으로 값 넣어보기
+      function IntroduceMyself3({ name, age, money, house, coffee }) {
+        return (
+          <div>
+            <p>제 이름은 {name}</p>
+            <p>제 나이는 {age}</p>
+            <p>제 통장은 {money}</p>
+            <p>저희 집은 {house}</p>
+            <p>커피는 {coffee}</p>
+          </div>
+        );
+      }
+
+      const app = (
+        <main>
+          <IntroduceMyself
+            name="jibro"
+            age="10"
+            money="1000"
+            house="null"
+            coffee="full"
+          />
+          {IntroduceMyself({
+            name: 'jibro',
+            age: '10',
+            money: '1000',
+            house: 'null',
+            coffee: 'full',
+          })}
+          <IntroduceMyself
+            name="jibro"
+            age="10"
+            money={1000}
+            house="null"
+            coffee="full"
+          />
+          <IntroduceMyself2
+            name="jibro"
+            age="10"
+            money={1000}
+            house="null"
+            coffee="full"
+          />
+          <IntroduceMyself3
+            name="jibro--"
+            age="1000"
+            money={100000}
+            house="nullll"
+            coffee="fullll"
+          />
+        </main>
+      );
+
+      // DOM에 리액트 컴포넌트 랜더링하기
+      const domContainer = document.querySelector('#root');
+      ReactDOM.render(app, domContainer);
+    </script>
+  </body>
+</html>

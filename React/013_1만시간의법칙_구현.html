@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>리액트 1분만에 추가해보기!</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      const Main = () => {
+        return (
+          <main id="main">
+            <Header />
+            <Form />
+            <Result field="프로그래밍" time={2000} />
+            <LoadingScreen />
+            <Copyright />
+          </main>
+        );
+      };
+
+      /* 제목과 설명 */
+      const Header = () => {
+        return (
+          <header>
+            <h1 className="tit-law">
+              <img
+                src="img/title.png"
+                alt="1만 시간의 법칙"
+                className="img-tit"
+              />
+            </h1>
+            <img
+              src="img/txt_subtitle.png"
+              alt="연습은 어제의 당신보다 당신을 더 낫게 만든다."
+              className="img-txt"
+            />
+            <p className="txt-desc">
+              <strong className="tit-desc">1만 시간의 법칙</strong>은<br />
+              어떤 분야의 전문가가 되기 위해서는
+              <br />
+              최소한 1만 시간의 훈련이 필요하다는 법칙이다.
+            </p>
+          </header>
+        );
+      };
+
+      /* 전문가와 훈련시간 입력폼 */
+      const Form = () => {
+        return (
+          <form className="cont-inp">
+            <p className="txt-wannabe">
+              나는
+              <input
+                id="inp-field"
+                type="text"
+                placeholder="예&#41; 프로그래밍"
+                required
+              />
+              전문가가 될 것이다.
+            </p>
+            <p className="txt-time">
+              그래서 앞으로 매일 하루에
+              <input
+                id="inp-time"
+                type="number"
+                placeholder="예&#41; 5"
+                required
+              />
+              시간씩 훈련할 것이다.
+            </p>
+            <button type="button" className="btn-exc">
+              나는 며칠 동안 훈련을 해야 1만 시간이 될까?
+            </button>
+          </form>
+        );
+      };
+
+      /* 결과 확인 화면 */
+      const Result = ({ field, time }) => {
+        return (
+          <section className="cont-result">
+            <h2 className="blind">결과 확인</h2>
+            <p className="txt-wannabe">
+              당신은
+              <strong className="field-result">{field}</strong>
+              전문가가 되기 위해서
+              <br />
+              대략
+              <strong className="time-result">{time}</strong>일 이상 훈련하셔야
+              합니다! :&#41;
+            </p>
+            <button className="btn-go">훈련하러 가기 GO!GO!</button>
+            <button className="btn-share">공유하기</button>
+          </section>
+        );
+      };
+
+      /* 결과 로딩 화면 */
+      const LoadingScreen = () => {
+        return (
+          <section className="cont-result-loading">
+            <h2 className="blind">결과 확인 로딩중</h2>
+            <img className="img-rotate" src="img/loading.png" alt="" />
+          </section>
+        );
+      };
+
+      /* 회사 저작권 정보 */
+      const Copyright = () => {
+        return (
+          <footer className="cont-footer">
+            <img className="img-footer" src="img/weniv.png" alt="" />
+            <p className="txt-footer">
+              &#8251; 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에
+              있습니다.
+            </p>
+            <p>
+              수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.
+            </p>
+          </footer>
+        );
+      };
+
+      const Modal = () => {
+        return (
+          <section id="modal">
+            <h2 className="blind">응원화면 모달</h2>
+            <article className="modal_wrap">
+              <h3 className="blind">응원 문구</h3>
+              <p className="tit-modal">화이팅!!</p>
+              <p className="cont-modal">당신의 꿈을 응원합니다.</p>
+              <img
+                className="img-licat"
+                src="img/licat.png"
+                alt="응원하는 라이이켓"
+              />
+              <button className="btn-close">
+                종료하고 진짜 훈련하러 가기 GO!GO!
+              </button>
+            </article>
+          </section>
+        );
+      };
+
+      const app = (
+        <div>
+          <Main />
+          <Modal />
+        </div>
+      );
+
+      const domContainer = document.querySelector('#root');
+      ReactDOM.render(app, domContainer);
+    </script>
+  </body>
+</html>

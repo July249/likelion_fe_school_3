@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>리액트 1분만에 추가해보기!</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      const json = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      function ImageSlide() {
+        return (
+          <img
+            width="200px"
+            src="https://images.unsplash.com/photo-1616738227115-954748f35c61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            alt=""
+          />
+        );
+      }
+
+      function Title() {
+        return <h1>Jeju의 명소, Weniv</h1>;
+      }
+
+      function Info() {
+        return <p>100km 거리</p>;
+      }
+
+      function PricePerDay() {
+        return <p>100,000</p>;
+      }
+
+      const app = (
+        // 중괄호 안에는 js로 인식한다.
+        <div>{[<ImageSlide />, <Title />, <Info />, <PricePerDay />]}</div>
+      );
+      const domContainer = document.querySelector('#root');
+      ReactDOM.render(app, domContainer);
+    </script>
+  </body>
+</html>
