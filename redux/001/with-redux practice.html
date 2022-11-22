@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+  </head>
+
+  <body>
+    <style>
+      .container {
+        border: 5px solid black;
+        border-radius: 0px;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+      }
+    </style>
+    <button
+      onclick="store.dispatch({type:'CHANGE_RADIUS', borderRadius:'0px'});"
+    >
+      Rect
+    </button>
+    <button
+      onclick="store.dispatch({type:'CHANGE_RADIUS', borderRadius:'20%'});"
+    >
+      Rounded
+    </button>
+    <button
+      onclick="store.dispatch({type:'CHANGE_RADIUS', borderRadius:'50%'});"
+    >
+      Circle
+    </button>
+    <button
+      onclick="store.dispatch({type:'CHANGE_COLOR', backgroundColor: 'red'});"
+    >
+      Red
+    </button>
+
+    <br /><br /><br />
+
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+
+    <script>
+      // state는 현재 상태, action은 주문 받은 것!
+      function reducer(state, action) {
+        if (state === undefined) {
+          return { borderRadius: '0', backgroundColor: 'white' };
+        }
+        var newState;
+        if (action.type === 'CHANGE_RADIUS') {
+          newState = { ...state, borderRadius: action.borderRadius };
+        } else if (action.type === 'CHANGE_COLOR') {
+          newState = { ...state, backgroundColor: action.backgroundColor };
+        }
+        return newState;
+      }
+
+      var store = Redux.createStore(
+        reducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSION__() // redux dev tools를 사용하기 위한 코드
+      );
+
+      function one() {
+        var state = store.getState();
+        //type은 반드시 있어야 합니다.
+        // 바뀔 때마다 console에 store.getState()를 실행해보세요.
+        document.querySelector('#one').innerHTML = `
+                <div class="container" style="border-radius:${state.borderRadius}; background-color: ${state.backgroundColor}"></div>
+            `;
+      }
+      // 값이 바뀔 때마다 red 함수를 호출
+      store.subscribe(one);
+      one();
+
+      function two() {
+        var state = store.getState();
+        //type은 반드시 있어야 합니다.
+        // 바뀔 때마다 console에 store.getState()를 실행해보세요.
+        document.querySelector('#two').innerHTML = `
+                <div class="container" style="border-radius:${state.borderRadius}; background-color: ${state.backgroundColor}"></div>
+            `;
+      }
+      // 값이 바뀔 때마다 red 함수를 호출
+      store.subscribe(two);
+      two();
+
+      function three() {
+        var state = store.getState();
+        //type은 반드시 있어야 합니다.
+        // 바뀔 때마다 console에 store.getState()를 실행해보세요.
+        document.querySelector('#three').innerHTML = `
+                <div class="container" style="border-radius:${state.borderRadius}; background-color: ${state.backgroundColor}"></div>
+            `;
+      }
+      // 값이 바뀔 때마다 red 함수를 호출
+      store.subscribe(three);
+      three();
+    </script>
+  </body>
+</html>
