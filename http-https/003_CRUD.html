@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제코베 스토어 관리자 페이지 CRUD</title>
+    <style>
+      input {
+        line-height: 2rem;
+        padding: 0.25rem 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        background-color: #f3f4f6;
+      }
+
+      button {
+        padding: 0.5rem 2rem;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        background-color: #4d85c5;
+        cursor: pointer;
+      }
+
+      div {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1fr 2fr;
+        max-width: 700px;
+        margin: 20px auto 80px;
+      }
+
+      section {
+        position: relative;
+        max-width: 700px;
+        padding: 8px 0;
+        margin: 0px auto;
+      }
+
+      section + section {
+        margin-top: 8px;
+        border-top: 1px solid #d1d5db;
+      }
+
+      section h2 {
+        font-size: 1.2rem;
+      }
+
+      section input {
+        display: block;
+        width: 500px;
+        line-height: 20px;
+        margin: 8px 0;
+      }
+
+      section button:nth-of-type(1) {
+        position: absolute;
+        top: 16px;
+        right: 4px;
+      }
+
+      section button:nth-of-type(2) {
+        position: absolute;
+        bottom: 12px;
+        right: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="inp-name">상품이름</label>
+      <input id="inp-name" type="text" />
+
+      <label for="inp-price">제품가격</label>
+      <input id="inp-price" type="number" />
+
+      <label for="inp-stock">재고</label>
+      <input id="inp-stock" type="number" />
+
+      <label for="inp-date">출시날짜</label>
+      <input id="inp-date" type="date" />
+
+      <button id="btn-load">상품불러오기</button>
+      <button type="button" id="btn-register">상품등록하기</button>
+    </div>
+
+    <script>
+      let editBtns = [];
+      // Read
+      const btnLoad = document.querySelector('#btn-load');
+      btnLoad.addEventListener('click', async (event) => {
+        // console.log("눌렀다.");
+        await fetch('http://localhost:3001/product', {
+          method: 'GET',
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            for (i of data) {
+              // console.log(i);
+              const container = document.createElement('section');
+              const productName = document.createElement('h2');
+              const price = document.createElement('p');
+              const button = document.createElement('button');
+
+              productName.innerText = i.productName;
+              price.innerText = i.price;
+              button.setAttribute('type', 'button');
+              button.setAttribute('id', 'btn-update');
+              button.textContent = '수정하기';
+
+              container.appendChild(productName);
+              container.appendChild(price);
+              container.appendChild(button);
+
+              document.body.appendChild(container);
+            }
+          });
+        await editBtns.push(...document.querySelectorAll('#btn-update'));
+
+        // update
+        // await console.log(editBtns);
+        await editBtns.forEach((btn) => {
+          btn.addEventListener('click', function (e) {
+            const target = e.currentTarget;
+            const section = target.parentElement;
+            console.log(section.childNodes);
+          });
+        });
+      });
+
+      // Create
+      const btnRegister = document.querySelector('#btn-register');
+      btnRegister.addEventListener('click', (event) => {
+        console.log('눌렀다.');
+
+        const productInfo = {
+          productName: document.querySelector('#inp-name').value,
+          price: document.querySelector('#inp-price').value,
+          stockCount: document.querySelector('#inp-stock').value,
+          viewCount: 0,
+          pubDate: document.querySelector('#inp-date').value,
+          modDate: document.querySelector('#inp-date').value,
+        };
+
+        fetch('http://localhost:3001/product', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(productInfo),
+        })
+          .then((response) => response.json())
+          // .then((data) => console.log(data))
+          .then((data) => {
+            const $container = document.createElement('section');
+            const $productName = document.createElement('h2');
+            const $price = document.createElement('p');
+
+            $productName.innerText = data.productName;
+            $price.innerText = data.price;
+
+            $container.appendChild($productName);
+            $container.appendChild($price);
+
+            document.body.appendChild($container);
+          });
+      });
+
+      // Update
+
+      // const productInfo = {
+      //   productName: document.querySelector('#productName').value,
+      //   price: document.querySelector('#productPrice').value,
+      //   stockCount: document.querySelector('#productStock').value,
+      //   viewCount: 0,
+      //   pubDate: document.querySelector('#productPubDate').value,
+      //   modDate: document.querySelector('#productPubDate').value,
+      // };
+
+      /* fetch('http://localhost:3001/product', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(productInfo),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const modifiedProduct = data.filter(
+              (product) => product.id === productId
+            );
+            modifiedProduct.id = productId;
+            modifiedProduct.productName = productInfo.productName;
+            modifiedProduct.price = productInfo.price;
+            modifiedProduct.stockCount = productInfo.stockCount;
+            modifiedProduct.viewCount = 0;
+            modifiedProduct.pubDate = productInfo.pubDate;
+            modifiedProduct.modDate = productInfo.modDate;
+          });
+      }); */
+    </script>
+  </body>
+</html>
