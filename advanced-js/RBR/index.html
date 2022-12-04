@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RBR</title>
+    <link rel="stylesheet" href="./test.css" media="orientation:portrait" />
+    <!-- css를 Non-RBR로 만들어보자! -->
+    <!-- media="all" -->
+    <!-- media="orientation:portrait" -->
+    <!-- media="min-width 400px" -->
+    <!-- media="print" -->
+  </head>
+  <body>
+    <!-- Render Blocking Resources -->
+    <!-- 
+      css를 Non-RBR로 만들어보자!
+
+      개발자도구 네트워크 => DOMContentLoaded 이벤트 발생 시점 (=== 파란색 선) dom 트리가 완성되는 시점
+                        => load 이벤트가 끝나는 시점 (=== 빨간색 선) 모든 소스를 가져와서 로딩이 완료된 시점
+     -->
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nulla
+      reiciendis dolorem esse at tenetur dicta iste, sequi quidem magni.
+    </div>
+  </body>
+</html>
