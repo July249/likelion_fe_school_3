@@ -1,73 +1,53 @@
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
+  constructor(value) {
+    this.value = value;
+    // this.child = [] // 이진 트리가 아닌 트리를 만들 때 사용
+    this.left = null;
+    this.right = null;
   }
 }
 
-class LinkedList {
-  constructor() {
-    // 초기설정을 위해서 init 노드를 생성
-    let init = new Node('init');
-    // 초기설정
-    this.head = init;
-    this.tail = init;
-    this.count = 0;
+class Tree {
+  constructor(value) {
+    let init = new Node(value);
+    this.root = init;
+    this.length = 0;
   }
 
-  append(data) {
-    let 새로운노드 = new Node(data);
-    // 마지막 값(null)은 새로운 노드가 됨
-    this.tail.next = 새로운노드;
-    // 마지막 노드는 새로운 노드가 됨
-    this.tail = 새로운노드;
-    this.count += 1;
-  }
+  insert(value) {
+    let 새로운노드 = new Node(value);
+    let 순회용현재노드 = this.root;
 
-  // 99 -> 2 -> 13 -> 86 -> 32
-  // => 99, 2, 13, 86, 32
-
-  toString() {
-    let 순회용현재노드 = this.head; // 순회용현재노드 = {data: init, next|| -> {99 ... }}
-
-    //처음 순회용 현재 노드가 init이기 때문에
-    순회용현재노드 = 순회용현재노드.next;
-    /* 
-    순회용현재노드 = init.next
-    // 시작~~~
-    시작값 <= {data: 99, next: {...}}                        => data: 99  => '' + 99 => '99, ' 
-    순회용현재노드 = {data: 99, next: {...}}.next
-    {data: 2, next: {...}}                         => data: 2  => '' + 2 => '2, '
-    순회용현재노드 = {data: 2, next: {...}}.next
-    {data: 13, next: {...}}                        => data: 13  => '' + 13 => '13, '
-    순회용현재노드 = {data: 13, next: {...}}.next
-    {data: 86, next: {...}}                        => data: 86  => '' + 86 => '86, '
-    순회용현재노드 = {data: 86, next: {...}}.next
-    {data: 32, next: null}                         => data: 32  => '' + 32 => '32, '
-    */
-    // 순회용현재노드 = {data: 99, next: {data: 2, next: {data: 13, next: ...} ....}}
-
-    let 출력데이터 = '';
-    for (let i = 0; i < this.count; i++) {
-      출력데이터 += `${순회용현재노드.data}, `;
-      순회용현재노드 = 순회용현재노드.next;
+    while (순회용현재노드) {
+      if (value == 순회용현재노드.value) {
+        // 들어온 값이 존재하는 값이면 트리에 값을 추가하지 않습니다.
+        return;
+      } else if (value < 순회용현재노드.value) {
+        // 들어온 값이 작을 경우 왼쪽에 붙어야함
+        // 해당 값이 비어 있으면 값을 넣고
+        // 비어있지 않으면 계속 타고 내려가야함
+        if (!순회용현재노드.left) {
+          순회용현재노드.left = 새로운노드;
+          this.length += 1;
+          return;
+        }
+        순회용현재노드 = 순회용현재노드.left;
+      } else if (value > 순회용현재노드.right) {
+        if (!순회용현재노드.right) {
+          순회용현재노드.right = 새로운노드;
+          this.length += 1;
+          return;
+        }
+      }
     }
-    // i = 4
-    // 출력데이터 = '99, 2, 13, 86, 32, '
-
-    return 출력데이터;
   }
 }
-/* 
-{data: init, next: {data: 99, next: {data: 2, next: {data: 13, next: {data: 86, next ....}}}}}
-                                          ↑
-                                    순회용현재노드.next
-*/
 
-l = new LinkedList();
-l.append(99);
-l.append(2);
-l.append(13);
-l.append(86);
-l.append(32);
-console.log(l);
+let tree = new Tree(5);
+tree.insert(3);
+tree.insert(8);
+tree.insert(1);
+tree.insert(4);
+tree.insert(6);
+tree.insert(7);
+console.log(tree.root.value);

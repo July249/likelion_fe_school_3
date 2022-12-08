@@ -1013,6 +1013,205 @@ const tree = {
 }
 ```
 
+```js
+const root = {
+  value: 55,
+  left: null,
+  right: null,
+};
+
+const node1 = {
+  value: 53,
+  left: null,
+  right: null,
+};
+const node2 = {
+  value: 99,
+  left: null,
+  right: null,
+};
+const node3 = {
+  value: 37,
+  left: null,
+  right: null,
+};
+const node4 = {
+  value: 54,
+  left: null,
+  right: null,
+};
+
+root.left = node1;
+root.right = node2;
+
+node1.left = node3;
+node1.right = node4;
+```
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    // this.child = [] // 이진 트리가 아닌 트리를 만들 때 사용
+    this.left = null;
+    this.right = null;
+  }
+}
+
+const root = new Node(55);
+const node1 = new Node(53);
+const node2 = new Node(99);
+const node3 = new Node(37);
+const node4 = new Node(54);
+```
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    // this.child = [] // 이진 트리가 아닌 트리를 만들 때 사용
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class Tree {
+  constructor(value) {
+    let init = new Node(value);
+    this.root = init;
+    this.length = 0;
+  }
+
+  insert(value) {
+    let 새로운노드 = new Node(value);
+    let 순회용현재노드 = this.root;
+
+    while (순회용현재노드) {
+      if (value == 순회용현재노드.value) {
+        // 들어온 값이 존재하는 값이면 트리에 값을 추가하지 않습니다.
+        return;
+      } else if (value < 순회용현재노드.value) {
+        // 들어온 값이 작을 경우 왼쪽에 붙어야함
+        // 해당 값이 비어 있으면 값을 넣고
+        // 비어있지 않으면 계속 타고 내려가야함
+        if (!순회용현재노드.left) {
+          순회용현재노드.left = 새로운노드;
+          this.length += 1;
+          return;
+        }
+        순회용현재노드 = 순회용현재노드.left;
+      } else if (value > 순회용현재노드.right) {
+        if (!순회용현재노드.right) {
+          순회용현재노드.right = 새로운노드;
+          this.length += 1;
+          return;
+        }
+      }
+    }
+  }
+}
+
+// class Node {
+//   constructor(data) {
+//     this.data = data;
+//     // this.child = [] // 2진트리가 아닌 트리를 만들 때 사용할 수 있습니다.
+//     this.left = null;
+//     this.right = null;
+//   }
+// }
+//
+// class Tree {
+//   constructor(data) {
+//     let init = new Node(data);
+//     this.root = init;
+//     this.length = 0;
+//   }
+//
+//   // length(){ // this.length와 이름이 같아서 작동하지 않습니다.
+//   //     return this.length
+//   // }
+//
+//   insert(data) {
+//     let 새로운노드 = new Node(data);
+//     let 순회용현재노드 = this.root;
+//
+//     while (순회용현재노드) {
+//       if (data == 순회용현재노드.data) {
+//         // 들어온 값이 존재하는 값이면 트리에 값을 추가하지 않습니다.
+//         return;
+//       } else if (data < 순회용현재노드.data) {
+//         // 들어온 데이터가 작은 경우 왼쪽에 붙여야 합니다!
+//         // 해당 데이터 부분이 비어있으면 데이터를 넣고, 비어있지 않으면 계속 타고 내려가야 합니다.
+//         if (!순회용현재노드.left) {
+//           순회용현재노드.left = 새로운노드;
+//           this.데이터수 += 1;
+//           return;
+//         }
+//         순회용현재노드 = 순회용현재노드.left;
+//       } else if (data > 순회용현재노드.data) {
+//         // 들어온 데이터가 큰 경우 오른쪽에 붙여야 합니다!
+//         // 해당 데이터 부분이 비어있으면 데이터를 넣고, 비어있지 않으면 계속 타고 내려가야 합니다.
+//         if (!순회용현재노드.right) {
+//           순회용현재노드.right = 새로운노드;
+//           this.데이터수 += 1;
+//           return;
+//         }
+//         순회용현재노드 = 순회용현재노드.right;
+//       }
+//     }
+//   }
+// }
+
+let tree = new Tree(5);
+tree.insert(3);
+tree.insert(8);
+tree.insert(1);
+tree.insert(4);
+tree.insert(6);
+tree.insert(7);
+
+//깊스너큐
+DFS(){
+  // 깊이우선탐색, DFS(Depth First Search)
+  // Stack 이용!
+  let 방문경로 = [];
+  let 스택 = [this.root];
+
+  while(스택.length !== 0) {
+    let current = 스택.pop();
+    if (current.right) {
+      스택.push(current.rigth);
+    }
+    if (current.left) {
+      스택.push(current.left);
+    }
+    방문경로.push(current.data);
+  }
+  return 방문경로;
+}
+
+BFS(){
+  // 너비우선탐색, BFS(Breadth First Search)
+  // Queue 이용!
+  let 방문경로 = []
+  let 큐 = [this.root]
+
+  while(큐.length !== 0){
+    let current = 큐.shift()
+    if (current.right){
+        큐.push(current.right)
+    }
+    if (current.left){
+        큐.push(current.left)
+    }
+    방문경로.push(current.data)
+  }
+
+  return 방문경로
+}
+
+```
+
 ### 1.4.4 정렬 알고리즘
 
 #### 1.4.4.1 선택 정렬
