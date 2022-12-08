@@ -1,0 +1,7 @@
+total 5
+drwxr-xr-x 1 JihyeongLee 197121   0 11월  9 13:40 ./
+drwxr-xr-x 1 JihyeongLee 197121   0 11월  9 13:22 ../
+-rw-r--r-- 1 JihyeongLee 197121   0 11월  9 13:23 001.html
+-rw-r--r-- 1 JihyeongLee 197121   0 11월  9 13:23 002.html
+-rw-r--r-- 1 JihyeongLee 197121 206 11월  9 13:39 003.txt
+-rw-r--r-- 1 JihyeongLee 197121   0 11월  9 13:48 hello.txt
