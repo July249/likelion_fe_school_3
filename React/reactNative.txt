@@ -1,0 +1,42 @@
+https://snack.expo.dev/
+
+// test 1
+ 
+import * as React from 'react';
+import { WebView } from 'react-native-webview';
+
+export default class App extends React.Component {
+  render() {
+    return <WebView source={{ uri: 'http://paullab.co.kr/about.html' }} style={{ marginTop: 20 }} />;
+  }
+}
+
+// test 2
+
+import React, {Component} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+export default class App extends Component<Props> {
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.case1} />
+        <View style={styles.case2} />
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  case1: {
+    flex: 1,
+    backgroundColor: 'red',
+  },
+  case2: {
+    flex: 1,
+    backgroundColor: 'blue',
+  },
+});

@@ -1,0 +1,222 @@
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React (main)
+$ cd 쇼핑몰_프로젝트
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트 (main)
+$ npx create-react-app my-app --template basic-react
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+Creating a new React app in C:\Users\JihyeongLee\Desktop\Projects\likelion_fe_school_3\React\쇼핑몰_프로젝트\my-app.      
+
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template-basic-react...
+
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+added 1399 packages in 2m
+
+226 packages are looking for funding
+  run `npm fund` for details
+
+Installing template dependencies using npm...
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+up to date in 12s
+
+226 packages are looking for funding
+  run `npm fund` for details
+Removing template package using npm...
+
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+removed 1 package, and audited 1399 packages in 12s
+
+226 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Success! Created my-app at C:\Users\JihyeongLee\Desktop\Projects\likelion_fe_school_3\React\쇼핑몰_프로젝트\my-app        
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd my-app
+  npm start
+
+Happy hacking!
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트 (main)
+$ cd my-app/src
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src (main)        
+$ mkdir components database pages assets
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src (main)        
+$ cd pages
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages (main)  
+$ mkdir Hompage ProductDetailPage CartPage
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages (main)  
+$ cd ..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src (main)        
+$ cd components
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components (main)
+$ touch .keep
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components (main)
+$ ls
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components (main)
+$ rm ./.keep
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components (main)
+$ mkdir Card Cart
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components (main)
+$ cd Card
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card (main)
+$ mkdir ProductImage ProductName ProductPrice
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card (main)
+$ touch Card.jsx card.css
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card (main)
+$ cd ProductImage/
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card/ProductImage (main)
+$ touch ProductImage.jsx productImage.css
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card/ProductImage (main)
+$ cd ..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card (main)
+$ cd ProductName
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card/ProductName (main)
+$ touch ProductName.jsx productName.css
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card/ProductName (main)
+$ cd ..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card (main)
+$ cd ProductPrice
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card/ProductPrice (main)
+$ touch ProductPrice.jsx productPrice.css
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Card/ProductPrice (main)
+$ cd ../../..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src (main)
+$ cd components
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components (main)
+$ cd Cart
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Cart (main)
+$ touch Cart.jsx cart.css
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components/Cart (main)
+$ cd ..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components (main)
+$ cd database
+bash: cd: database: No such file or directory
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/components (main)
+$ cd ..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src (main)        
+$ cd database/
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/database (main)
+$ touch data.js
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/database (main)
+$ cd ..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src (main)        
+$ cd assets/
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/assets (main) 
+$ mkdir images
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/assets (main) 
+$ mkdir css
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/assets (main) 
+$ cd ../..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app (main)
+$ mv App.js App.jsx
+mv: cannot stat 'App.js': No such file or directory
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app (main)
+$ ls
+node_modules/  package.json  package-lock.json  public/  README.md  src/  terminal.txt
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app (main)
+$ cd src
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src (main)        
+$ mv App.js App.jsx
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src (main)
+$ cd pages
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages (main)
+$ cd CartPage
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages/CartPage (main)
+$ touch CartPage.jsx cartPage.css
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages/CartPage (main)
+$ cd ..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages (main)
+$ cd Homepage
+bash: cd: Homepage: No such file or directory
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages (main)  
+$ cd Hompage/
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages/Hompage (main)
+$ touch Homepage.jsx homepage.css
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages/Hompage (main)
+$ cd ..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages (main)  
+$ cd ProductDetailPage/
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages/ProductDetailPage (main)
+$ touch ProductDetailPage.jsx productDetailPage.css
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src/pages/ProductDetailPage (main)
+$ cd ../..
+
+JihyeongLee@JihyeongLee-PC MINGW64 ~/Desktop/Projects/likelion_fe_school_3/React/쇼핑몰_프로젝트/my-app/src (main)        
+$
