@@ -1,0 +1,68 @@
+:root {
+	--max-width: 1320px;
+}
+
+.max-width {
+	/* width: var(--max-width);
+	max-width: calc(100% - 60px); */
+	width: min(var(--max-width), calc(100% - 60px));
+	margin: 0 auto;
+}
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+	height: 200vh;
+	padding-top: 80px;
+}
+
+@media (min-width: 1616px) {
+	aside {
+		background: aquamarine;
+		position: fixed;
+		top: 100px;
+		left: calc(50% + var(--max-width) / 2 + 24px);
+		width: 124px;
+	}
+}
+
+footer {
+	background-color: gold;
+}
+
+.common-section {
+	display: flex;
+	gap: 80px;
+}
+.common-section .first {
+	background: gold;
+	flex: 0 0 240px;
+	min-width: 0;
+	/* flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 240px; */
+}
+.common-section .second {
+	background: skyblue;
+}
+
+@media (min-width: 1025px) {
+	.friends .common-section {
+		flex-direction: row-reverse;
+	}
+}
+
+@media (max-width: 1024px) {
+	.common-section {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.common-section .first {
+		flex-basis: auto;
+	}
+}

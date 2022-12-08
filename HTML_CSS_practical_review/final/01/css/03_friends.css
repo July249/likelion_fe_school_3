@@ -1,0 +1,32 @@
+.card-list {
+	display: flex;
+	gap: 24px;
+}
+
+.card-list li {
+	flex: 1 1 0;
+}
+
+.card-list li a {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	background: #fff;
+}
+
+.card-list li .thumbnail {
+	width: 100%;
+	height: 0;
+	padding-top: 60%;
+	position: relative;
+	overflow: hidden;
+}
+
+.card-list li .thumbnail img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
