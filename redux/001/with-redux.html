@@ -14,7 +14,15 @@
     <div id="red"></div>
     <div id="blue"></div>
     <div id="green"></div>
+    <div id="pink"></div>
+    <div id="gray"></div>
     <script>
+      // 1. 새로운 컴포넌트가 생성이 될 때 코드가 컴포넌트의 개수만큼 기하급수적으로 늘어납니다.
+      // 2. 새로운 컴포넌트를 만들었는데 이전 컴포넌트도 모두 수정을 해야 합니다.
+
+      // 1. 새로운 컴포넌트가 생성이 될 때 코드가 늘어나지 않습니다.
+      // 2. 새로운 컴포넌트 안에서만 코딩하면 됩니다.
+
       // state는 현재 상태, action은 주문 받은 것!
       function reducer(state, action) {
         console.log(state, action);
@@ -80,6 +88,34 @@
       }
       store.subscribe(green);
       green();
+
+      function pink() {
+        var state = store.getState();
+        document.querySelector('#pink').innerHTML = `
+                <div class="container" id="component_pink" style="background-color:${state.color}">
+                    <h1>pink</h1>
+                    <input type="button" value="fire" onclick="
+                        store.dispatch({type:'CHANGE_COLOR', color:'pink'});
+                    ">
+                </div>
+            `;
+      }
+      store.subscribe(pink);
+      pink();
+
+      function gray() {
+        var state = store.getState();
+        document.querySelector('#gray').innerHTML = `
+                <div class="container" id="component_gray" style="background-color:${state.color}">
+                    <h1>gray</h1>
+                    <input type="button" value="fire" onclick="
+                        store.dispatch({type:'CHANGE_COLOR', color:'gray'});
+                    ">
+                </div>
+            `;
+      }
+      store.subscribe(gray);
+      gray();
     </script>
   </body>
 </html>
