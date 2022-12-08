@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Validation</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="email">이메일을 입력하세요</label>
+      <input type="email" id="email" />
+      <button>제출</button>
+    </form>
+    <p></p>
+    <script>
+      const emailInput = document.querySelector('#email');
+      const btn = document.querySelector('button');
+      const p = document.querySelector('p');
+
+      emailInput.addEventListener('input', () => {
+        if (emailInput.validity.typeMismatch) {
+          emailInput.setCustomValidity(
+            '알맞은 양식의 이메일 주소를 입력하세요'
+          );
+        } else {
+          // 에러 해제를 위한 역할
+          emailInput.setCustomValidity('');
+        }
+      });
+
+      btn.addEventListener('click', () => {
+        const isValid = emailInput.validity.valid;
+        // console.log(isValid);
+        if (!isValid) {
+          p.textContent = '오류';
+        } else {
+          p.textContent = emailInput.value;
+        }
+      });
+
+      /* 알맞은 양식의 이메일 주소를 입력하세요. */
+    </script>
+  </body>
+</html>

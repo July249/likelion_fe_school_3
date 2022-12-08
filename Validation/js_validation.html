@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Validation</title>
+  </head>
+  <body>
+    <form action="">
+      <!-- Native Pattern 이용 -->
+      <!-- <label for="txt">한글 입력:</label>
+      <input type="text" id="txt" required pattern="[가-힣]" /> -->
+
+      <label for="num">숫자 입력:</label>
+      <input type="text" id="num" required />
+
+      <button>제출</button>
+    </form>
+    <script>
+      const inpNum = document.querySelector('#num');
+      // console.log(inpNum.validity);
+      // ValidatyState 출력 (기본값)
+      /*
+       * {
+       *    badInput : false, // 잘못된 입력 여부
+       *    customError : false, // 커스텀 오류 여부
+       *    patternMismatch : false, // 패턴 오류 여부
+       *    rangeOverflow : false, // 범위 초과 오류 여부
+       *    rangeUnderflow : false, // 범위 미달 오류 여부
+       *    stepMismatch : false, // 간격 오류 여부
+       *    tooLong : false, // 길이 오류 여부
+       *    tooShort : false, // 길이 오류 여부
+       *    typeMismatch : false, // 타입 오류 여부
+       *    valid : false, // 검출 결과 통과 여부
+       *    valueMissing : true // 필수값 오류 여부
+       * }
+       */
+      inpNum.addEventListener('input', () => {
+        console.log(inpNum.validity);
+      });
+    </script>
+  </body>
+</html>

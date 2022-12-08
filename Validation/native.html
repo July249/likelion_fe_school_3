@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Native Validation</title>
+    <style>
+      label {
+        display: block;
+      }
+      /* 해당 속성은 required가 없는 input과 시각적인 구분을 가능하게 합니다 */
+      input:required {
+        outline: 5px solid green;
+      }
+
+      input:invalid {
+        outline: 5px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <!-- 
+        minlength, maxlength : 데이터의 길이를 제한
+        <input type="text" required minlength="" maxlength="" />
+
+        type : number, email, text, password, url ... 입력 가능한 값을 제한
+        <input type="number" min="" max="" />
+      -->
+      <label for="stuff">원하는 수량을 입력하세요 (최소 3개 이상)</label>
+      <input type="number" min="3" id="stuff" />
+      <label for="email">이메일을 입력하세요</label>
+      <input type="email" id="email" required maxlength="20" />
+
+      <button>제출</button>
+    </form>
+  </body>
+</html>
