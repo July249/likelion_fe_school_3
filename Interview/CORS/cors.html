@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function loadHeroes() {
+        const res = await fetch(
+          'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json'
+        );
+
+        if (res.ok) {
+          const data = await res.json();
+          console.log(data);
+        } else {
+          alert('통신에러' + res.status);
+        }
+      }
+
+      loadHeroes();
+
+      // access-control-allow-origin: * => 누구나 접근할 수 있음음
+    </script>
+  </body>
+</html>

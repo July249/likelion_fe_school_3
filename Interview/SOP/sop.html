@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hello sop!</h1>
+
+    <iframe class="test" src="./test.html" frameborder="0"></iframe>
+    <iframe
+      class="youtube"
+      width="1007"
+      height="566"
+      src="https://www.youtube.com/embed/ITzcZia7fsQ"
+      title="David Garrett - Paganini Caprice Nº 24 [concert]."
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
+    <script>
+      // 호스트가 다르면 상호작용이 안된다. 읽는 것은 된다.
+      let x = document.querySelector('.test');
+      let y = document.querySelector('.youtube');
+
+      x.addEventListener('load', () => {
+        console.log('same origin: ', x.contentDocument);
+        x.contentDocument.body.style.backgroundColor = 'red';
+      });
+
+      y.addEventListener('load', () => {
+        console.log('same origin: ', y.contentDocument);
+        x.contentDocument.body.style.backgroundColor = 'red';
+      });
+    </script>
+  </body>
+</html>
