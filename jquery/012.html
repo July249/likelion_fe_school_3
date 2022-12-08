@@ -31,16 +31,16 @@
       </ul>
     </div>
     <ul class="ul2">
-      <li>hello</li>
-      <li>hello</li>
-      <li>hello</li>
-      <li>hello</li>
-      <li>hello</li>
-      <li>hello</li>
-      <li>hello</li>
-      <li>hello</li>
-      <li>hello</li>
-      <li>hello</li>
+      <li>hello1</li>
+      <li>hello2</li>
+      <li>hello3</li>
+      <li>hello4</li>
+      <li>hello5</li>
+      <li>hello6</li>
+      <li>hello7</li>
+      <li>hello8</li>
+      <li>hello9</li>
+      <li>hello10</li>
     </ul>
     <script>
       // console.log($('.items').children());
@@ -67,15 +67,16 @@
 
       // Collect Answer
       $('.items').parent().css('backgroundColor', 'blue');
-      $('.items').eq(1).css('color', 'red');
-      $('.ul2').children('li:lt(3)').css('color', 'red');
-      $('.ul2').children('li:lt(3)').css('color', 'green'); // $('.ul2 li:lt(3)').css('color', 'green');
-      $('.ul2').children('li:gt(5)').css('color', 'red'); // $('.ul2 :nth-child(n+3)').css('color','green');
-      $('.ul2 > li')
-        .slice(6)
-        .css('color', 'red')
-        .css('backgroundColor', 'blue');
-      $('.ul2 > li').slice(6).css({ color: 'blue', background: 'red' });
+      // $('.items').eq(1).css('color', 'red');
+      // $('.ul2').children('li:lt(3)').css('color', 'red');
+      // $('.ul2').children('li:lt(3)').css('color', 'green'); // $('.ul2 li:lt(3)').css('color', 'green');
+      $('.ul2').children('li:gt(1)').css('color', 'red');
+      // $('.ul2').children('li:gt(1)').css('color', 'red'); // $('.ul2 :nth-child(n+3)').css('color','green');
+      // $('.ul2 > li')
+      //   .slice(6)
+      //   .css('color', 'red')
+      //   .css('backgroundColor', 'blue');
+      // $('.ul2 > li').slice(6).css({ color: 'blue', background: 'red' });
     </script>
   </body>
 </html>
