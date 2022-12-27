@@ -10,8 +10,15 @@ function LoginForm({ setIsLogin }) {
     if (id === "licat" && password === "weniv!!") {
       setIsLogin(true);
       console.log("로그인 성공!");
+    } else if (id === "licat" && password !== "weniv!!") {
+      console.log("로그인 실패!");
+      console.log("비밀번호를 다시 한번 기억해보세요~");
+    } else if (id !== "licat" && password === "weniv!!") {
+      console.log("로그인 실패!");
+      console.log("아이디를 다시 한번 기억해보세요~");
     } else {
       console.log("로그인 실패!");
+      console.log("아이디랑 비밀번호가 모두 틀렸어요~ ㅠㅠ");
     }
   };
 
