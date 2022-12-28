@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Input Box</title>
+  <style>
+    /* .txt-hide {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+      } */
+
+    span {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      vertical-align: -5px;
+      background-image: url("images/css_sprites.png");
+      background-position: -52px -10px;
+    }
+
+    span[aria-checked="true"] {
+      background-image: url("images/css_sprites.png");
+      background-position: -10px -10px;
+    }
+
+    /* 가상 요소는 기본적으로 inline 요소이다 */
+    /* .labl-hold::before {
+        content: ' ';
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        background-image: url('./images/icon_check_empty.png');
+        vertical-align: -5px;
+      } */
+
+    /* .inp-hold:checked + .labl-hold::before {
+        background-image: url('./images/icon_check.png');
+      } */
+
+    /* 접근성을 생각하면 outline 필요 */
+    /* .inp-hold:focus + .labl-hold::before {
+        outline: 2px solid #000;
+        outline-offset: 5px;
+        border-radius: 50%;
+      } */
+  </style>
+</head>
+
+<body>
+  <!-- <input type="checkbox" id="inpHold" class="inp-hold txt-hide" /> -->
+  <!-- role: 접근성 보조 기술에 요소의 실질적인 역할이 무엇인지 알려줍니다. -->
+  <!-- aria-checked: role이 checkbox일 때 같이 사용됩니다. -->
+  <!-- aria-labelledby: label 요소의 id 값과 연결됨 -->
+  <!-- tabindex="0" : 포커스가 되는 요소로 변경해줌, 0보다 큰 값이 탭 이동에 우선순위를 가지게 합니다. 값이 1에 가까울수록 우선순위를 가짐 -->
+  <!-- 하지만 안티 속성이다. => html 렌더링 순서를 어기기 때문임 -->
+  <!-- 모달 만들 때 주로 사용됩니다. -->
+  <span role="checkbox" aria-checked="false" aria-labelledby="inpHold" tabindex="0"></span>
+
+  <label id="inpHold" class="labl-hold" tabindex="0">선택해주세요</label>
+
+
+  <script>
+    const item = document.querySelector('span');
+    const itemLabel = document.querySelector('label');
+
+    // item.addEventListener('click', changeCheckbox);
+    // item.addEventListener('keydown', changeCheckbox);
+    // itemLabel.addEventListener('click', changeCheckbox);
+    // itemLabel.addEventListener('keydown', changeCheckbox);
+
+    [item, itemLabel].forEach((item) => {
+      ['click', 'keydown'].forEach((eventType) => {
+        item.addEventListener(eventType, changeCheckbox);
+      })
+    })
+
+    function changeCheckbox(event) {
+      const spaceBar = 32;
+      const checked = item.getAttribute('aria-checked');
+
+      if (event.keyCode && event.keyCode !== spaceBar) {
+        return;
+      } else if (checked === 'true') {
+        item.setAttribute('aria-checked', 'false');
+      } else {
+        item.setAttribute('aria-checked', 'true');
+      }
+    }
+
+  </script>
+</body>
+
+</html>
