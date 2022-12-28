@@ -1,42 +1,46 @@
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 
-function LoginForm({ setIsLogin }) {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
+function LoginForm({ state, dispatch }) {
+  const idRef = useRef();
+  const pwdRef = useRef();
+
+  const userInfo = { id: "licat", password: "weniv!!" };
+
+  useEffect(() => {
+    idRef.current.focus();
+  }, []);
 
   const handleLoginForm = (event) => {
     event.preventDefault();
 
-    if (id === "licat" && password === "weniv!!") {
-      setIsLogin(true);
-      console.log("로그인 성공!");
-    } else if (id === "licat" && password !== "weniv!!") {
-      console.log("로그인 실패!");
-      console.log("비밀번호를 다시 한번 기억해보세요~");
-    } else if (id !== "licat" && password === "weniv!!") {
-      console.log("로그인 실패!");
-      console.log("아이디를 다시 한번 기억해보세요~");
+    const idInput = idRef.current.value;
+    const passwordInput = pwdRef.current.value;
+
+    if (idInput === userInfo.id && passwordInput === userInfo.password) {
+      dispatch({ type: "LOGIN_SUCCESS", payload: userInfo });
+    } else if (idInput !== userInfo.id && passwordInput === userInfo.password) {
+      dispatch({ type: "MISS_ID" });
+    } else if (idInput === userInfo.id && passwordInput !== userInfo.password) {
+      dispatch({ type: "MISS_PASSWORD" });
     } else {
-      console.log("로그인 실패!");
-      console.log("아이디랑 비밀번호가 모두 틀렸어요~ ㅠㅠ");
+      dispatch({ type: "LOGIN_FAILURE" });
     }
+
+    idRef.current.value = "";
+    pwdRef.current.value = "";
   };
 
   return (
     <form action="" onSubmit={handleLoginForm}>
-      <label htmlFor="">ID</label>{" "}
-      <input type="text" placeholder="아이디를 입력해주세요" onChange={(event) => setId(event.target.value)} />
+      <label>ID</label> <input ref={idRef} type="text" placeholder="아이디를 입력해주세요" />
       <br />
       <br />
-      <label htmlFor="">Password</label>{" "}
-      <input
-        type="password"
-        placeholder="비밀번호를 입력해주세요"
-        onChange={(event) => setPassword(event.target.value)}
-      />
+      <label>Password</label> <input ref={pwdRef} type="password" placeholder="비밀번호를 입력해주세요" />
       <br />
       <br />
       <button>로그인 하기</button>
+      <br />
+      <p>{state.message}</p>
     </form>
   );
 }
