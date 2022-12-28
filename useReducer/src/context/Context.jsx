@@ -11,9 +11,7 @@ export const ContextProvider = ({ children }) => {
   return (
     <Context.Provider
       value={{
-        user: state.user,
-        isLogin: state.isLogin,
-        message: state.message,
+        state,
         dispatch,
       }}
     >

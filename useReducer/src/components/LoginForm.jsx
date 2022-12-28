@@ -1,6 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import Context from "../context/Context";
 
-function LoginForm({ state, dispatch }) {
+function LoginForm() {
+  const { state, dispatch } = useContext(Context);
+
   const idRef = useRef();
   const pwdRef = useRef();
 

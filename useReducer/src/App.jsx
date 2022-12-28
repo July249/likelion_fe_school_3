@@ -1,7 +1,8 @@
-import { useReducer } from "react";
-import Reducer from "./context/Reducer";
+import { useContext } from "react";
+// import Reducer from "./context/Reducer";
 import "./app.css";
 import LoginForm from "./components/LoginForm";
+import Context from "./context/Context";
 
 // const reducer = (state, action) => {
 //   console.log("old State: ", action.type, state);
@@ -43,12 +44,13 @@ import LoginForm from "./components/LoginForm";
 // };
 
 function App() {
+  const { state, dispatch } = useContext(Context);
   // const idRef = useRef();
   // const pwdRef = useRef();
 
   // const userInfo = { id: "licat", password: "weniv!!" };
 
-  const [state, dispatch] = useReducer(Reducer, { isLogin: false, message: "" });
+  // const [state, dispatch] = useReducer(Reducer, { isLogin: false, message: "" });
 
   // useEffect(() => {
   //   idRef.current.focus();
@@ -83,7 +85,7 @@ function App() {
           <button onClick={() => dispatch({ type: "LOGOUT" })}>로그아웃</button>
         </>
       ) : (
-        <LoginForm state={state} dispatch={dispatch} />
+        <LoginForm />
       )}
     </div>
   );
