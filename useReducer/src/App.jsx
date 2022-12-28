@@ -1,4 +1,4 @@
-import { useRef, useReducer, useEffect } from "react";
+import { useReducer } from "react";
 import Reducer from "./context/Reducer";
 import "./app.css";
 import LoginForm from "./components/LoginForm";
@@ -84,17 +84,6 @@ function App() {
         </>
       ) : (
         <LoginForm state={state} dispatch={dispatch} />
-        // <form action="" onSubmit={handleLoginForm}>
-        //   <label>ID</label> <input ref={idRef} type="text" placeholder="아이디를 입력해주세요" />
-        //   <br />
-        //   <br />
-        //   <label>Password</label> <input ref={pwdRef} type="password" placeholder="비밀번호를 입력해주세요" />
-        //   <br />
-        //   <br />
-        //   <button>로그인 하기</button>
-        //   <br />
-        //   <p>{state.message}</p>
-        // </form>
       )}
     </div>
   );
