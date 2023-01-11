@@ -12,11 +12,10 @@ function App() {
   };
 
   useEffect(() => {
-    if (value) {
-      findNumber(value);
-    } else {
-      setSearchResult([]);
-    }
+    const debounce = setTimeout(() => {
+      return value ? findNumber(value) : setSearchResult([]);
+    }, 500);
+    return () => clearTimeout(debounce);
   }, [value]);
 
   return (
