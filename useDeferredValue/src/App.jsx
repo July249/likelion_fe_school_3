@@ -5,11 +5,19 @@ function App() {
   const [searchResult, setSearchResult] = useState([]);
 
   const findNumber = (value) => {
-    const numberGenerater = Array(1000)
+    const numberGenerater = Array(10000)
       .fill()
       .map((value, index) => index + 1);
     setSearchResult(numberGenerater.filter((num) => !(num % parseInt(value))));
   };
+
+  // useEffect(() => {
+  //   if (value) {
+  //     findNumber(value);
+  //   } else {
+  //     setSearchResult([]);
+  //   }
+  // }, [value]);
 
   useEffect(() => {
     const debounce = setTimeout(() => {
